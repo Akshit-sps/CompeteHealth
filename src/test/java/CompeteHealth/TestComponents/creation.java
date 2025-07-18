@@ -14,7 +14,8 @@ public class creation extends BaseTest{
 	public void challengecreation() throws InterruptedException {
 		login.login("akshittested@yopmail.com", "Hello@123");
 		challenge = login.permissions();
-		challenge.challengecreation("Automation Test-2","Step" );
+//		challenge.challengecreation("Automation Test-2","Step","null");
+		challenge.challengecreation("Automation Test-3","Calories Burned","Cycle");
 		challenge.creation("100", "1", "Testing");
 	}
 }

@@ -86,15 +86,13 @@ public class ChallengeCreation extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
 	private WebElement permissionforpictures;
 	
-	public void challengecreation(String name,String typeName) throws InterruptedException {
+	//private , tiered challenges remaining 
+	public void challengecreation(String name,String typeName,String subtypename) throws InterruptedException {
 		plusicon.click();
 		waitForSeconds(10);
 		challengename.sendKeys(name);
-		challengentype.click();
-		String typeXpath = "//android.view.ViewGroup[@content-desc='" + typeName + "']";
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement typeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(typeXpath)));
-		typeElement.click();
+		
+		selectChallengeTypeAndSubType(typeName,subtypename);
 		startdate.click();
 		waitForSeconds(3);
 		scrolldate(2,248,799,248,699);//date
@@ -120,15 +118,13 @@ public class ChallengeCreation extends AndroidActionClass{
         entryFeeField.sendKeys(entryFee);
 
         setWinnersAndPercentages(3, new int[]{60, 30, 10});
-        
-              
+        	
         ScrolltoText("Submit");
         waitUntilVisible(descField);
         descField.sendKeys(description);
 
         waitUntilClickable(uploadBtn);
         uploadBtn.click();
-        
         
         waitUntilClickable(takePicBtn);
         takePicBtn.click();
@@ -197,6 +193,26 @@ public class ChallengeCreation extends AndroidActionClass{
 	        WebElement percentField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 	        percentField.clear();
 	        percentField.sendKeys(String.valueOf(percentages[i]));
+	    }
+	}
+	public void selectChallengeTypeAndSubType(String typeName, String subType) {
+		challengentype.click();
+	    String typeXpath = "//android.view.ViewGroup[@content-desc='" + typeName + "']";
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement typeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(typeXpath)));
+	    typeElement.click();
+
+	    if (typeName.equalsIgnoreCase("Active Minutes") ||
+	        typeName.equalsIgnoreCase("Distance") ||
+	        typeName.equalsIgnoreCase("Calories Burned")) {
+
+	        WebElement subTypeField = wait.until(ExpectedConditions.elementToBeClickable(
+	            By.xpath("//android.widget.TextView[@text='Challenge Sub Type']")));
+	        subTypeField.click();
+
+	        String subTypeXpath = "//android.view.ViewGroup[@content-desc='" + subType + "']";
+	        WebElement subTypeElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(subTypeXpath)));
+	        subTypeElement.click();
 	    }
 	}
     
