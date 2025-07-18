@@ -64,7 +64,7 @@ public class ChallengeCreation extends AndroidActionClass{
 
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Number of Winners']")
 	private WebElement numWinnersDropdown;
-
+	
 	@AndroidFindBy(xpath="//android.widget.EditText[@text=\"Description\"]")
 	private WebElement descField;
 
@@ -119,11 +119,9 @@ public class ChallengeCreation extends AndroidActionClass{
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
 
-        waitUntilClickable(numWinnersDropdown);
-        numWinnersDropdown.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement numWinnersOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='" + numWinners + "']")));
-        numWinnersOption.click();       
+        setWinnersAndPercentages(3, new int[]{60, 30, 10});
+        
+              
         ScrolltoText("Submit");
         waitUntilVisible(descField);
         descField.sendKeys(description);
@@ -182,6 +180,24 @@ public class ChallengeCreation extends AndroidActionClass{
             waitForSeconds(1);
         }
 	}
-	
+	public void setWinnersAndPercentages(int numWinners, int[] percentages) {
+	    // 1. Click the dropdown and select the number of winners
+		waitUntilClickable(numWinnersDropdown);
+	    numWinnersDropdown.click();
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement numWinnersOption = wait.until(ExpectedConditions.elementToBeClickable(
+	        By.xpath("//android.widget.TextView[@text='" + numWinners + "']")));
+	    numWinnersOption.click();
+
+	    // 2. Fill in the percentage fields for each place
+	    String[] placeSuffix = {"st", "nd", "rd", "th", "th"}; // Extend as needed
+	    for (int i = 0; i < numWinners; i++) {
+	        String place = (i + 1) + placeSuffix[Math.min(i, 4)];
+	        String xpath = "//android.widget.EditText[@text='" + place + " place payout (%)']";
+	        WebElement percentField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+	        percentField.clear();
+	        percentField.sendKeys(String.valueOf(percentages[i]));
+	    }
+	}
     
 }
