@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -20,6 +19,7 @@ public class Loginpage {
 		this.driver=driver; 
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
+	
 	@AndroidFindBy(xpath="//android.widget.EditText[@text='Enter your email address']")
 	private WebElement username;
 	
@@ -38,12 +38,16 @@ public class Loginpage {
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='com.android.healthconnect.controller:id/primary_button_outline']")
 	private WebElement permissionthree; 
 	
-	public void PreSetup() {
-		((InteractsWithApps) driver).terminateApp("com.androidsample.generalstore");
-		((InteractsWithApps) driver).activateApp("com.androidsample.generalstore");
-	}
+	@AndroidFindBy(id="com.android.permissioncontroller:id/permission_allow_button")
+	private WebElement permissionfour;
+	
+//	public void PreSetup() {
+//		((InteractsWithApps) driver).terminateApp("com.competehealth");
+//		((InteractsWithApps) driver).activateApp("com.competehealth");
+//	}
 	
 	public void login(String name,String pass) {
+		permissionfour.click();
 		username.sendKeys(name);
 		password.sendKeys(pass);
 		signin.click();

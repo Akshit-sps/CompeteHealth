@@ -38,7 +38,7 @@ public class BaseTest{
 		int port = Integer.parseInt(prop.getProperty("port"));
 		String deviceName = prop.getProperty("deviceName");
 		String chromedriverPath = prop.getProperty("chromedriverPath");
-		String apkRelativePath = prop.getProperty("apkPath");
+		String apkRelativePath = System.getProperty("user.dir") + "//src//test//java//CompeteHealth//Resources//competehealth.apk";
 		
 		// code to start the appium server (which we use in cmd using appium)
 		service = new AppiumServiceBuilder()
@@ -52,7 +52,7 @@ public class BaseTest{
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName(deviceName);
 		options.setChromedriverExecutable(chromedriverPath);
-		options.setApp(System.getProperty("user.dir") + "//" + apkRelativePath);
+		options.setApp(apkRelativePath);
 
 		driver = new AndroidDriver(new URI("http://" + ipAddress + ":" + port).toURL(), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

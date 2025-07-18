@@ -18,8 +18,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class ChallengeCreation extends AndroidActionClass{
-AndroidDriver driver;  
 	
+	AndroidDriver driver;  
 	public ChallengeCreation(AndroidDriver driver) {
 		super(driver);
 		this.driver=driver; 
@@ -82,7 +82,10 @@ AndroidDriver driver;
 
 	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Submit\"]")
 	private WebElement submitBtn;
-
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
+	private WebElement permissionforpictures;
+	
 	public void challengecreation(String name,String typeName) throws InterruptedException {
 		plusicon.click();
 		waitForSeconds(10);
@@ -127,8 +130,13 @@ AndroidDriver driver;
 
         waitUntilClickable(uploadBtn);
         uploadBtn.click();
+        
+        
         waitUntilClickable(takePicBtn);
         takePicBtn.click();
+        
+        permissionforpictures.click();
+        
         waitUntilClickable(shutterBtn);
         shutterBtn.click();
         
