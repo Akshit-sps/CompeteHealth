@@ -16,6 +16,7 @@ public class creation extends BaseTest{
 		challenge = login.permissions();
 //		challenge.challengecreation("Automation Test-2","Step","null");
 		challenge.challengecreation("Automation Test-3","Calories Burned","Cycle");
+		challenge.privatechallenge("Hello@123");
 		challenge.creation("100", "1", "Testing");
 	}
 }

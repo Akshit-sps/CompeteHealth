@@ -86,6 +86,11 @@ public class ChallengeCreation extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
 	private WebElement permissionforpictures;
 	
+	@AndroidFindBy(xpath="//android.widget.ScrollView/android.view.ViewGroup/android.widget.Switch[2]")
+	private WebElement privatechallengetoggle;
+	
+	@AndroidFindBy(xpath="//android.widget.EditText[@text='Challenge Password']")
+	private WebElement privatepassword;
 	//private , tiered challenges remaining 
 	public void challengecreation(String name,String typeName,String subtypename) throws InterruptedException {
 		plusicon.click();
@@ -120,6 +125,8 @@ public class ChallengeCreation extends AndroidActionClass{
         setWinnersAndPercentages(3, new int[]{60, 30, 10});
         	
         ScrolltoText("Submit");
+        
+        
         waitUntilVisible(descField);
         descField.sendKeys(description);
 
@@ -215,5 +222,8 @@ public class ChallengeCreation extends AndroidActionClass{
 	        subTypeElement.click();
 	    }
 	}
-    
+    public void privatechallenge(String privatepass) {
+    	privatechallengetoggle.click();
+    	privatepassword.sendKeys(privatepass);
+    }
 }
