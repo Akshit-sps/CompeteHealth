@@ -1,21 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-21T13:28:45 IST" name="Default suite" finished-at="2025-07-21T13:30:31 IST" duration-ms="106668">
+  <suite started-at="2025-07-21T16:11:00 IST" name="Default suite" finished-at="2025-07-21T16:12:38 IST" duration-ms="98203">
     <groups>
     </groups>
-    <test started-at="2025-07-21T13:28:45 IST" name="Default test" finished-at="2025-07-21T13:30:31 IST" duration-ms="106668">
+    <test started-at="2025-07-21T16:11:00 IST" name="Default test" finished-at="2025-07-21T16:12:38 IST" duration-ms="98203">
       <class name="CompeteHealth.TestComponents.creation">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.creation@22ff4249]" started-at="2025-07-21T13:28:45 IST" name="configureAppium" finished-at="2025-07-21T13:28:52 IST" duration-ms="7043" status="PASS">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.creation@77c2494c]" started-at="2025-07-21T16:11:00 IST" name="configureAppium" finished-at="2025-07-21T16:11:07 IST" duration-ms="7174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="challengecreation()[pri:0, instance:CompeteHealth.TestComponents.creation@22ff4249]" started-at="2025-07-21T13:28:52 IST" name="challengecreation" finished-at="2025-07-21T13:30:31 IST" duration-ms="98846" status="PASS">
+        <test-method signature="challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,[Ljava.lang.Integer;,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:CompeteHealth.TestComponents.creation@77c2494c]" started-at="2025-07-21T16:11:07 IST" name="challengecreationTest" data-provider="challengeData" finished-at="2025-07-21T16:12:38 IST" duration-ms="90322" status="FAIL">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
+            <message>
+              <![CDATA[
+[public void CompeteHealth.TestComponents.creation.challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Integer[],java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: challengecreationTest([java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4, java.lang.String arg5, int arg6, java.lang.Integer[] arg7, java.lang.String arg8, java.lang.String arg9, java.lang.String arg10, java.lang.String arg11])
+Arguments: [(java.lang.String) akshittested@yopmail.com,(java.lang.String) Hello@123,(java.lang.String) Challenge 2,(java.lang.String) Steps,null,(java.lang.String) 10,(java.lang.String) 1,([Ljava.lang.Integer;) [100],null,null,null,(java.lang.String) Test Desc 2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void CompeteHealth.TestComponents.creation.challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Integer[],java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: challengecreationTest([java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4, java.lang.String arg5, int arg6, java.lang.Integer[] arg7, java.lang.String arg8, java.lang.String arg9, java.lang.String arg10, java.lang.String arg11])
+Arguments: [(java.lang.String) akshittested@yopmail.com,(java.lang.String) Hello@123,(java.lang.String) Challenge 2,(java.lang.String) Steps,null,(java.lang.String) 10,(java.lang.String) 1,([Ljava.lang.Integer;) [100],null,null,null,(java.lang.String) Test Desc 2]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:46)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:915)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- challengecreation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.creation@22ff4249]" started-at="2025-07-21T13:30:31 IST" name="tearDown" finished-at="2025-07-21T13:30:31 IST" duration-ms="735" status="PASS">
+        </test-method> <!-- challengecreationTest -->
+        <test-method is-config="true" signature="Setup()[pri:0, instance:CompeteHealth.TestComponents.creation@77c2494c]" started-at="2025-07-21T16:11:07 IST" name="Setup" finished-at="2025-07-21T16:11:08 IST" duration-ms="830" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,[Ljava.lang.Integer;,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:CompeteHealth.TestComponents.creation@77c2494c]" started-at="2025-07-21T16:11:08 IST" name="challengecreationTest" data-provider="challengeData" finished-at="2025-07-21T16:12:38 IST" duration-ms="89475" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[akshittested@yopmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Challenge Automation]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Active Minutes]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Walk/Run]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[[Ljava.lang.Integer;@5a6d30e2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[6-Month Average]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Hello@123]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Creating a tiered challenge (6 month) with 2 tiers]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- challengecreationTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.creation@77c2494c]" started-at="2025-07-21T16:12:38 IST" name="tearDown" finished-at="2025-07-21T16:12:38 IST" duration-ms="676" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

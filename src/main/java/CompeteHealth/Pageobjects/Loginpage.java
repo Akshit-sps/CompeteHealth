@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -41,10 +42,10 @@ public class Loginpage {
 	@AndroidFindBy(id="com.android.permissioncontroller:id/permission_allow_button")
 	private WebElement permissionfour;
 	
-//	public void PreSetup() {
-//		((InteractsWithApps) driver).terminateApp("com.competehealth");
-//		((InteractsWithApps) driver).activateApp("com.competehealth");
-//	}
+	public void PreSetup() {
+		((InteractsWithApps) driver).terminateApp("com.competehealth");
+		((InteractsWithApps) driver).activateApp("com.competehealth");
+	}
 	
 	public void login(String name,String pass) {
 		permissionfour.click();

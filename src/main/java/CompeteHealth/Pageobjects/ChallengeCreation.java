@@ -98,7 +98,7 @@ public class ChallengeCreation extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Grouping structure']")
 	private WebElement groupstructure;
 	
-	@AndroidFindBy(xpath="//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]")
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Number of Groups']")
 	private WebElement numberofgroup;
 	
 	public void challengedetails(String name,String typeName,String subtypename) throws InterruptedException {
@@ -127,13 +127,12 @@ public class ChallengeCreation extends AndroidActionClass{
 		scrollminutes(406,799,406,899);
 		confirmclick.click();
 	}
-	public void entryfee(String entryFee, String numWinners) throws InterruptedException {
+	public void entryfee(String entryFee, int numWinners,Integer[] percentages) throws InterruptedException {
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
 
-        setWinnersAndPercentages(3, new int[]{60, 30, 10});
+        setWinnersAndPercentages(numWinners,percentages);
         	
-        ScrolltoText("Submit");
     }
 	
 	public void tieredchallenge(String grpstructure,String numofgroup) {
@@ -145,7 +144,6 @@ public class ChallengeCreation extends AndroidActionClass{
         subTypeElement.click();
         if (grpstructure.equalsIgnoreCase("12-Month Average") ||grpstructure.equalsIgnoreCase("6-Month Average")) {
         	numberofgroup.click();
-        	
 	        WebElement subgroup = wait.until(ExpectedConditions.elementToBeClickable(
 	            By.xpath("//android.widget.TextView[@text='"+ numofgroup + "']")));
 	        subgroup.click();
@@ -160,7 +158,9 @@ public class ChallengeCreation extends AndroidActionClass{
 	public void discriptionandcamara(String description) {
 		waitUntilVisible(descField);
         descField.sendKeys(description);
-
+        
+        ScrolltoText("Submit");
+        
         waitUntilClickable(uploadBtn);
         uploadBtn.click();
         
@@ -214,7 +214,7 @@ public class ChallengeCreation extends AndroidActionClass{
             waitForSeconds(1);
         }
 	}
-	public void setWinnersAndPercentages(int numWinners, int[] percentages) {
+	public void setWinnersAndPercentages(int numWinners, Integer[] percentages) {
 	    // 1. Click the dropdown and select the number of winners
 		waitUntilClickable(numWinnersDropdown);
 	    numWinnersDropdown.click();
