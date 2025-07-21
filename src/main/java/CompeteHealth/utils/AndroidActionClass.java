@@ -56,7 +56,7 @@ public class AndroidActionClass {
     }
 
 	public void waitUntilClickable(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 

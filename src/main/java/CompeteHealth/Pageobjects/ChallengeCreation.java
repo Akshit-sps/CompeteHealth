@@ -91,8 +91,17 @@ public class ChallengeCreation extends AndroidActionClass{
 	
 	@AndroidFindBy(xpath="//android.widget.EditText[@text='Challenge Password']")
 	private WebElement privatepassword;
-	//private , tiered challenges remaining 
-	public void challengecreation(String name,String typeName,String subtypename) throws InterruptedException {
+	
+	@AndroidFindBy(xpath="//android.widget.ScrollView/android.view.ViewGroup/android.widget.Switch[1]")
+	private WebElement tieredchallenge;
+	 
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Grouping structure']")
+	private WebElement groupstructure;
+	
+	@AndroidFindBy(xpath="//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]")
+	private WebElement numberofgroup;
+	
+	public void challengedetails(String name,String typeName,String subtypename) throws InterruptedException {
 		plusicon.click();
 		waitForSeconds(10);
 		challengename.sendKeys(name);
@@ -118,16 +127,38 @@ public class ChallengeCreation extends AndroidActionClass{
 		scrollminutes(406,799,406,899);
 		confirmclick.click();
 	}
-	public void creation(String entryFee, String numWinners, String description) throws InterruptedException {
+	public void entryfee(String entryFee, String numWinners) throws InterruptedException {
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
 
         setWinnersAndPercentages(3, new int[]{60, 30, 10});
         	
         ScrolltoText("Submit");
-        
-        
-        waitUntilVisible(descField);
+    }
+	
+	public void tieredchallenge(String grpstructure,String numofgroup) {
+    	tieredchallenge.click();
+    	groupstructure.click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	String subTypeXpath = "//android.widget.TextView[@text='" + grpstructure + "']";
+    	WebElement subTypeElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(subTypeXpath)));
+        subTypeElement.click();
+        if (grpstructure.equalsIgnoreCase("12-Month Average") ||grpstructure.equalsIgnoreCase("6-Month Average")) {
+        	numberofgroup.click();
+        	
+	        WebElement subgroup = wait.until(ExpectedConditions.elementToBeClickable(
+	            By.xpath("//android.widget.TextView[@text='"+ numofgroup + "']")));
+	        subgroup.click();
+    	}
+    }
+	
+	public void privatechallenge(String privatepass) {
+    	privatechallengetoggle.click();
+    	privatepassword.sendKeys(privatepass);
+    }
+	
+	public void discriptionandcamara(String description) {
+		waitUntilVisible(descField);
         descField.sendKeys(description);
 
         waitUntilClickable(uploadBtn);
@@ -156,7 +187,7 @@ public class ChallengeCreation extends AndroidActionClass{
 
         waitUntilClickable(submitBtn);
         submitBtn.click();
-    }
+	}
 	public void scrolldate(int numofswipe,int x, int y, int x1, int y1) throws InterruptedException {
         for (int i = 0; i < numofswipe; i++) {
             PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
@@ -222,8 +253,6 @@ public class ChallengeCreation extends AndroidActionClass{
 	        subTypeElement.click();
 	    }
 	}
-    public void privatechallenge(String privatepass) {
-    	privatechallengetoggle.click();
-    	privatepassword.sendKeys(privatepass);
-    }
+    
+    
 }
