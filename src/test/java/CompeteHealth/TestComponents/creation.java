@@ -38,7 +38,8 @@ public class creation extends BaseTest{
 		
 		login.login(email, password);
 		challenge = login.permissions();
-		challenge.challengedetails(name, typeName, subType);
+		challenge.nameandtype(name, typeName, subType);
+		challenge.dateandtime();
 		challenge.entryfee(entryFee, numWinners,percentages);
 		if (tieredStructure != null && numOfGroups != null) {
 			challenge.tieredchallenge(tieredStructure, numOfGroups);

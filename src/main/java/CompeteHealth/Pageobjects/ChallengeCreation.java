@@ -101,12 +101,14 @@ public class ChallengeCreation extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Number of Groups']")
 	private WebElement numberofgroup;
 	
-	public void challengedetails(String name,String typeName,String subtypename) throws InterruptedException {
+	public void nameandtype(String name,String typeName,String subtypename){
 		plusicon.click();
 		waitForSeconds(10);
 		challengename.sendKeys(name);
-		
 		selectChallengeTypeAndSubType(typeName,subtypename);
+		
+	}
+	public void dateandtime() throws InterruptedException {
 		startdate.click();
 		waitForSeconds(3);
 		scrolldate(2,248,799,248,699);//date
@@ -121,7 +123,7 @@ public class ChallengeCreation extends AndroidActionClass{
 		scrolldate(3,248,799,248,699);//date
 		scrolldate(0,360,799,360,699);//month
 		scrolldate(0, 472, 799, 472, 699);//year
-		button.click();
+		button.click();    
 		endtime.click();
 		scrolldate(2, 314, 799, 314, 699);
 		scrollminutes(406,799,406,899);
@@ -130,9 +132,7 @@ public class ChallengeCreation extends AndroidActionClass{
 	public void entryfee(String entryFee, int numWinners,Integer[] percentages) throws InterruptedException {
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
-
         setWinnersAndPercentages(numWinners,percentages);
-        	
     }
 	
 	public void tieredchallenge(String grpstructure,String numofgroup) {
