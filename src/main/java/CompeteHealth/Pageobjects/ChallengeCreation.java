@@ -1,7 +1,9 @@
 package CompeteHealth.Pageobjects;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 import org.openqa.selenium.By;
@@ -108,27 +110,57 @@ public class ChallengeCreation extends AndroidActionClass{
 		selectChallengeTypeAndSubType(typeName,subtypename);
 		
 	}
-	public void dateandtime() throws InterruptedException {
-		startdate.click();
-		waitForSeconds(3);
-		scrolldate(2,248,799,248,699);//date
-		scrolldate(1,360,799,360,699);//month
-		scrolldate(0, 472, 799, 472, 699);//year
-		confirmclick.click();
-		starttime.click();
-		scrolldate(2, 314, 799, 314, 699);
-		scrollminutes(406,799,406,899);
-		confirmclick.click();
-		enddate.click();
-		scrolldate(3,248,799,248,699);//date
-		scrolldate(0,360,799,360,699);//month
-		scrolldate(0, 472, 799, 472, 699);//year
-		button.click();    
-		endtime.click();
-		scrolldate(2, 314, 799, 314, 699);
-		scrollminutes(406,799,406,899);
-		confirmclick.click();
-	}
+    
+    public void dateandtime(String startDate, String startTime, String endDate, String endTime) throws InterruptedException {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+
+        LocalDate currentDate = LocalDate.now();
+        LocalDate inputStartDate = LocalDate.parse(startDate, dateFormatter);
+        int dayDiff = inputStartDate.getDayOfMonth() - currentDate.getDayOfMonth();
+        int monthDiff = inputStartDate.getMonthValue() - currentDate.getMonthValue();
+        int yearDiff = inputStartDate.getYear() - currentDate.getYear();
+
+        startdate.click();
+        waitForSeconds(3);
+        // day
+        if (dayDiff != 0) scrolldate(Math.abs(dayDiff), 248, 799, 248, dayDiff > 0 ? 699 : 899);
+        // month
+        if (monthDiff != 0) scrolldate(Math.abs(monthDiff), 360, 799, 360, monthDiff > 0 ? 699 : 899);
+        // year
+        if (yearDiff != 0) scrolldate(Math.abs(yearDiff), 472, 799, 472, yearDiff > 0 ? 699 : 899);
+        confirmclick.click();
+
+        LocalTime currentTime = LocalTime.now();
+        LocalTime inputStartTime = LocalTime.parse(startTime, timeFormatter);
+        int hourDiff = inputStartTime.getHour() - currentTime.getHour();
+        starttime.click();
+        // hour
+        if (hourDiff != 0) scrolldate(Math.abs(hourDiff), 314, 799, 314, hourDiff > 0 ? 699 : 899);
+        waitForSeconds(1); // Wait after hour scroll
+        // minutes 
+        scrollminutes(406,799,406,899);
+        confirmclick.click();
+
+        LocalDate inputEndDate = LocalDate.parse(endDate, dateFormatter);
+        int endDayDiff = inputEndDate.getDayOfMonth() - currentDate.getDayOfMonth();
+        int endMonthDiff = inputEndDate.getMonthValue() - currentDate.getMonthValue();
+        int endYearDiff = inputEndDate.getYear() - currentDate.getYear();
+
+        enddate.click();
+        if (endDayDiff != 0) scrolldate(Math.abs(endDayDiff), 248, 799, 248, endDayDiff > 0 ? 699 : 899);
+        if (endMonthDiff != 0) scrolldate(Math.abs(endMonthDiff), 360, 799, 360, endMonthDiff > 0 ? 699 : 899);
+        if (endYearDiff != 0) scrolldate(Math.abs(endYearDiff), 472, 799, 472, endYearDiff > 0 ? 699 : 899);
+        button.click();
+
+        LocalTime inputEndTime = LocalTime.parse(endTime, timeFormatter);
+        int endHourDiff = inputEndTime.getHour() - currentTime.getHour();
+        endtime.click();
+        if (endHourDiff != 0) scrolldate(Math.abs(endHourDiff), 314, 799, 314, endHourDiff > 0 ? 699 : 899);
+        waitForSeconds(1);
+        scrollminutes(406,799,406,899);
+        confirmclick.click();
+    }
 	public void entryfee(String entryFee, int numWinners,Integer[] percentages) throws InterruptedException {
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
