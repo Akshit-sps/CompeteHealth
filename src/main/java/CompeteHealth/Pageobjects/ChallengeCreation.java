@@ -134,12 +134,18 @@ public class ChallengeCreation extends AndroidActionClass{
         LocalTime currentTime = LocalTime.now();
         LocalTime inputStartTime = LocalTime.parse(startTime, timeFormatter);
         int hourDiff = inputStartTime.getHour() - currentTime.getHour();
+        int minute = currentTime.getMinute();
         starttime.click();
-        // hour
+        // Always scroll hour first
         if (hourDiff != 0) scrolldate(Math.abs(hourDiff), 314, 799, 314, hourDiff > 0 ? 699 : 899);
-        waitForSeconds(1); // Wait after hour scroll
-        // minutes 
-        scrollminutes(406,799,406,899);
+        // Then scroll minutes to :00 if needed (if picker is at :30)
+        if (minute >= 15 && minute < 30) {
+            // Picker will be at :30, so scroll to :00
+            scrollminutes(406,799,406,899);
+        } else if (minute >= 30) {
+            // Picker will be at next hour :00, so no need to scroll minutes
+            // Do nothing
+        }
         confirmclick.click();
 
         LocalDate inputEndDate = LocalDate.parse(endDate, dateFormatter);
@@ -155,10 +161,17 @@ public class ChallengeCreation extends AndroidActionClass{
 
         LocalTime inputEndTime = LocalTime.parse(endTime, timeFormatter);
         int endHourDiff = inputEndTime.getHour() - currentTime.getHour();
+        int endMinute = currentTime.getMinute();
         endtime.click();
+        // Always scroll hour first
         if (endHourDiff != 0) scrolldate(Math.abs(endHourDiff), 314, 799, 314, endHourDiff > 0 ? 699 : 899);
+        // Then scroll minutes to :00 if needed (if picker is at :30)
+        if (endMinute >= 15 && endMinute < 30) {
+            scrollminutes(406,799,406,899);
+        } else if (endMinute >= 30) {
+            // Picker will be at next hour :00, so no need to scroll minutes
+        }
         waitForSeconds(1);
-        scrollminutes(406,799,406,899);
         confirmclick.click();
     }
 	public void entryfee(String entryFee, int numWinners,Integer[] percentages) throws InterruptedException {
