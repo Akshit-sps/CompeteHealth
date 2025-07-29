@@ -103,6 +103,12 @@ public class ChallengeCreation extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Number of Groups']")
 	private WebElement numberofgroup;
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Select date']")
+	private WebElement selectdate;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Select time']")
+	private WebElement selecttime;
+	
 	public void nameandtype(String name,String typeName,String subtypename){
 		plusicon.click();
 		waitForSeconds(10);
@@ -122,7 +128,7 @@ public class ChallengeCreation extends AndroidActionClass{
         int yearDiff = inputStartDate.getYear() - currentDate.getYear();
 
         startdate.click();
-        waitForSeconds(3);
+        waitUntilVisible(selectdate); // Wait for date picker to be ready
         // day
         if (dayDiff != 0) scrolldate(Math.abs(dayDiff), 248, 799, 248, dayDiff > 0 ? 699 : 899);
         // month
@@ -131,21 +137,15 @@ public class ChallengeCreation extends AndroidActionClass{
         if (yearDiff != 0) scrolldate(Math.abs(yearDiff), 472, 799, 472, yearDiff > 0 ? 699 : 899);
         confirmclick.click();
 
-        LocalTime currentTime = LocalTime.now();
         LocalTime inputStartTime = LocalTime.parse(startTime, timeFormatter);
-        int hourDiff = inputStartTime.getHour() - currentTime.getHour();
-        int minute = currentTime.getMinute();
+        int hourDiff = inputStartTime.getHour() - LocalTime.now().getHour();
+        int minuteDiff = inputStartTime.getMinute() - LocalTime.now().getMinute();
         starttime.click();
+        waitUntilVisible(selecttime); // Wait for time picker to be ready
         // Always scroll hour first
         if (hourDiff != 0) scrolldate(Math.abs(hourDiff), 314, 799, 314, hourDiff > 0 ? 699 : 899);
-        // Then scroll minutes to :00 if needed (if picker is at :30)
-        if (minute >= 15 && minute < 30) {
-            // Picker will be at :30, so scroll to :00
-            scrollminutes(406,799,406,899);
-        } else if (minute >= 30) {
-            // Picker will be at next hour :00, so no need to scroll minutes
-            // Do nothing
-        }
+        waitForSeconds(1); // Wait 1 second before scrolling minutes
+        if (minuteDiff != 0) scrollminutes(406,799,406,899);
         confirmclick.click();
 
         LocalDate inputEndDate = LocalDate.parse(endDate, dateFormatter);
@@ -154,30 +154,30 @@ public class ChallengeCreation extends AndroidActionClass{
         int endYearDiff = inputEndDate.getYear() - currentDate.getYear();
 
         enddate.click();
+        waitUntilVisible(selectdate); // Wait for date picker to be ready
         if (endDayDiff != 0) scrolldate(Math.abs(endDayDiff), 248, 799, 248, endDayDiff > 0 ? 699 : 899);
         if (endMonthDiff != 0) scrolldate(Math.abs(endMonthDiff), 360, 799, 360, endMonthDiff > 0 ? 699 : 899);
         if (endYearDiff != 0) scrolldate(Math.abs(endYearDiff), 472, 799, 472, endYearDiff > 0 ? 699 : 899);
         button.click();
 
         LocalTime inputEndTime = LocalTime.parse(endTime, timeFormatter);
-        int endHourDiff = inputEndTime.getHour() - currentTime.getHour();
-        int endMinute = currentTime.getMinute();
+        int endHourDiff = inputEndTime.getHour() - inputStartTime.getHour();
+        int endMinuteDiff = inputEndTime.getMinute() - inputStartTime.getMinute();
         endtime.click();
+        waitUntilVisible(selecttime); // Wait for time picker to be ready
         // Always scroll hour first
         if (endHourDiff != 0) scrolldate(Math.abs(endHourDiff), 314, 799, 314, endHourDiff > 0 ? 699 : 899);
-        // Then scroll minutes to :00 if needed (if picker is at :30)
-        if (endMinute >= 15 && endMinute < 30) {
-            scrollminutes(406,799,406,899);
-        } else if (endMinute >= 30) {
-            // Picker will be at next hour :00, so no need to scroll minutes
-        }
+        waitForSeconds(1); // Wait 1 second before scrolling minutes
+        if (endMinuteDiff != 0) scrollminutes(406,799,406,899);
         waitForSeconds(1);
         confirmclick.click();
+        ScrolltoText("Submit");
     }
 	public void entryfee(String entryFee, int numWinners,Integer[] percentages) throws InterruptedException {
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
         setWinnersAndPercentages(numWinners,percentages);
+        ScrolltoText("Submit");
     }
 	
 	public void tieredchallenge(String grpstructure,String numofgroup) {
@@ -193,18 +193,19 @@ public class ChallengeCreation extends AndroidActionClass{
 	            By.xpath("//android.widget.TextView[@text='"+ numofgroup + "']")));
 	        subgroup.click();
     	}
+        ScrolltoText("Submit");
     }
 	
 	public void privatechallenge(String privatepass) {
     	privatechallengetoggle.click();
+    	waitForElementToAppear(privatepassword, driver);
     	privatepassword.sendKeys(privatepass);
+    	ScrolltoText("Submit");
     }
 	
 	public void discriptionandcamara(String description) {
 		waitUntilVisible(descField);
         descField.sendKeys(description);
-        
-        ScrolltoText("Submit");
         
         waitUntilClickable(uploadBtn);
         uploadBtn.click();

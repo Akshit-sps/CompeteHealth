@@ -22,13 +22,13 @@ public class creation extends BaseTest{
 				"Time Challenge Automation", "Active Minutes", "Walk/Run",
 				"20", 2, new Integer[]{60, 40},
 				"6-Month Average", "2",
-				"Hello@123", "Creating a tiered challenge for dynamic time",
-				"24-07-2025", "14:00", "24-07-2025", "18:00"
+				null, "Creating a tiered challenge for dynamic time",
+				"29-07-2025", "15:00", "30-07-2025", "19:00"
 			}
 		};
 	}
 	
-	@Test(dataProvider = "challengeData")
+	@Test(dataProvider = "challengeData",groups={"regression"})
 	public void challengecreationTest(
 		String email, String password,
 		String name, String typeName, String subType,

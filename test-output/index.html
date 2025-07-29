@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\testng-eclipse-420505424\testng-customsuite.xml</span>
+                    <span>C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\testng-eclipse-1940534631\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -129,13 +129,12 @@
                   <a name="challengecreationTest(akshittested@yopmail.com, Hello@123, Time Challenge Automation, Active Minutes, Walk/Run, 20, 2, [60...)">
                   </a> <!-- challengecreationTest(akshittested@yopmail.com, Hello@123, Time Challenge Automation, Active Minutes, Walk/Run, 20, 2, [60...) -->
                   <span class="method-name">challengecreationTest</span>
-                  <span class="parameters">(akshittested@yopmail.com,Hello@123,Time Challenge Automation,Active Minutes,Walk/Run,20,2,[60, 40],6-Month Average,2,Hello@123,Creating a tiered challenge for dynamic time,24-07-2025,14:00,24-07-2025,18:00)</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.Button[@resource-id=&apos;com.android.permissioncontroller:id/permission_allow_foreground_only_button&apos;]})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$28gd7H6r.click(Unknown Source)
-	at CompeteHealth.Pageobjects.ChallengeCreation.discriptionandcamara(ChallengeCreation.java:202)
+                  <span class="parameters">(akshittested@yopmail.com,Hello@123,Time Challenge Automation,Active Minutes,Walk/Run,20,2,[60, 40],6-Month Average,2,null,Creating a tiered challenge for dynamic time,29-07-2025,15:00,30-07-2025,19:00)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Located by By.chained({By.xpath: //android.widget.Button[@resource-id=&quot;android:id/button1&quot;]}) (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at CompeteHealth.utils.AndroidActionClass.waitUntilClickable(AndroidActionClass.java:60)
+	at CompeteHealth.Pageobjects.ChallengeCreation.discriptionandcamara(ChallengeCreation.java:226)
 	at CompeteHealth.TestComponents.creation.challengecreationTest(creation.java:52)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -163,13 +162,25 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@65bdd558 (tried for 1 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.Button[@resource-id=&quot;android:id/button1&quot;]})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$m1xvtBaN.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@476fe690 (tried for 1 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
-	... 31 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Button[@resource-id=&apos;com.android.permissioncontroller:id/permission_allow_foreground_only_button&apos;]})
+	... 38 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Button[@resource-id=&quot;android:id/button1&quot;]})
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
@@ -188,7 +199,7 @@ Driver info: driver.version: RemoteWebDriver
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 33 more
+	... 40 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -198,7 +209,7 @@ Driver info: driver.version: RemoteWebDriver
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\testng-eclipse-420505424\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\testng-eclipse-1940534631\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -235,6 +246,14 @@ Driver info: driver.version: RemoteWebDriver
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">regression</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">challengecreationTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -255,7 +274,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'challengecreationTest')
 data.setCell(0, 2, 'CompeteHealth.TestComponents.creation')
-data.setCell(0, 3, 82550);
+data.setCell(0, 3, 108050);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -293,17 +312,17 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">Setup</span>
-                <span class="method-start">7780 ms</span>
+                <span class="method-start">12690 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">challengecreationTest(akshittested@yopmail.com, Hello@123, Time Challenge Automation, Active Minutes, Walk/Run, 20, 2, [60...)</span>
-                <span class="method-start">8486 ms</span>
+                <span class="method-start">13331 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">91045 ms</span>
+                <span class="method-start">121391 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
