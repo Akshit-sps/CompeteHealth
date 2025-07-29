@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-29T14:40:53 IST" name="Suite" finished-at="2025-07-29T14:42:32 IST" duration-ms="98881">
+  <suite started-at="2025-07-29T16:58:18 IST" name="Suite" finished-at="2025-07-29T16:59:59 IST" duration-ms="100826">
     <groups>
       <group name="regression">
         <method signature="creation.challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,[Ljava.lang.Integer;,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" name="challengecreationTest" class="CompeteHealth.TestComponents.creation"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2025-07-29T14:40:53 IST" name="Data-driven testing in code itself" finished-at="2025-07-29T14:42:32 IST" duration-ms="98881">
+    <test started-at="2025-07-29T16:58:18 IST" name="Data-driven testing in code itself" finished-at="2025-07-29T16:59:59 IST" duration-ms="100826">
       <class name="CompeteHealth.TestComponents.creation">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T14:40:53 IST" name="configureAppium" finished-at="2025-07-29T14:41:05 IST" duration-ms="11969" status="PASS">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T16:58:18 IST" name="configureAppium" finished-at="2025-07-29T16:58:27 IST" duration-ms="8876" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method is-config="true" signature="Setup()[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T14:41:05 IST" name="Setup" finished-at="2025-07-29T14:41:06 IST" duration-ms="680" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T16:58:27 IST" name="Setup" finished-at="2025-07-29T16:58:28 IST" duration-ms="803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,[Ljava.lang.Integer;,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T14:41:06 IST" name="challengecreationTest" data-provider="challengeData" finished-at="2025-07-29T14:42:31 IST" duration-ms="85474" status="PASS">
+        <test-method signature="challengecreationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,[Ljava.lang.Integer;,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T16:58:28 IST" name="challengecreationTest" data-provider="challengeData" finished-at="2025-07-29T16:59:58 IST" duration-ms="90468" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -57,7 +57,7 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[[Ljava.lang.Integer;@28a6301f]]>
+                <![CDATA[[Ljava.lang.Integer;@6c298dc]]>
               </value>
             </param>
             <param index="8">
@@ -85,7 +85,7 @@
             </param>
             <param index="13">
               <value>
-                <![CDATA[15:00]]>
+                <![CDATA[17:00]]>
               </value>
             </param>
             <param index="14">
@@ -95,14 +95,14 @@
             </param>
             <param index="15">
               <value>
-                <![CDATA[19:00]]>
+                <![CDATA[11:00]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- challengecreationTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T14:42:31 IST" name="tearDown" finished-at="2025-07-29T14:42:32 IST" duration-ms="714" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.creation@5c5eefef]" started-at="2025-07-29T16:59:58 IST" name="tearDown" finished-at="2025-07-29T16:59:59 IST" duration-ms="635" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="99.35" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="101.334" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\surefire13285927492125696873\surefirebooter-20250729144052925_3.jar C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\surefire13285927492125696873 2025-07-29T14-40-52_786-jvmRun1 surefire-20250729144052925_1tmp surefire_0-20250729144052925_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\surefire18127782720719557164\surefirebooter-20250729165817697_3.jar C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\surefire18127782720719557164 2025-07-29T16-58-17_546-jvmRun1 surefire-20250729165817697_1tmp surefire_0-20250729165817697_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\user.DESKTOP-I9IFEEO\eclipse-workspace\CompeteHealth\target\test-classes;C:\Users\user.DESKTOP-I9IFEEO\eclipse-workspace\CompeteHealth\target\classes;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-java\4.33.0\selenium-java-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-api\4.33.0\selenium-api-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.33.0\selenium-chrome-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.33.0\selenium-chromium-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-json\4.33.0\selenium-json-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.33.0\selenium-manager-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v135\4.33.0\selenium-devtools-v135-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v136\4.33.0\selenium-devtools-v136-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v137\4.33.0\selenium-devtools-v137-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.33.0\selenium-edge-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.33.0\selenium-firefox-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-http\4.33.0\selenium-http-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.33.0\selenium-ie-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.33.0\selenium-remote-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\guava\guava\33.4.8-jre\guava-33.4.8-jre.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-api\1.50.0\opentelemetry-api-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-context\1.50.0\opentelemetry-context-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.50.0\opentelemetry-exporter-logging-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.50.0\opentelemetry-sdk-common-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.50.0\opentelemetry-sdk-extension-autoconfigure-spi-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.50.0\opentelemetry-sdk-extension-autoconfigure-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.50.0\opentelemetry-sdk-trace-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.50.0\opentelemetry-sdk-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.50.0\opentelemetry-sdk-metrics-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.50.0\opentelemetry-sdk-logs-1.50.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\net\bytebuddy\byte-buddy\1.17.5\byte-buddy-1.17.5.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-os\4.33.0\selenium-os-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.33.0\selenium-safari-driver-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\seleniumhq\selenium\selenium-support\4.33.0\selenium-support-4.33.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\appium\java-client\9.4.0\java-client-9.4.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\commons-io\commons-io\2.19.0\commons-io-2.19.0.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.1\jackson-databind-2.19.1.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.1\jackson-annotations-2.19.1.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.1\jackson-core-2.19.1.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\com\aventstack\extentreports\5.1.2\extentreports-5.1.2.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\freemarker\freemarker\2.3.32\freemarker-2.3.32.jar;C:\Users\user.DESKTOP-I9IFEEO\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\surefire13285927492125696873\surefirebooter-20250729144052925_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\user.DESKTOP-I9IFEEO\AppData\Local\Temp\surefire18127782720719557164\surefirebooter-20250729165817697_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+8-LTS-188"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="challengecreationTest[akshittested@yopmail.com, Hello@123, Time Challenge Automation, Active Minutes, Walk/Run, 20, 2, [Ljava.lang.Integer;@28a6301f, 6-Month Average, 2, null, Creating a tiered challenge for dynamic time, 29-07-2025, 15:00, 30-07-2025, 19:00](1)" classname="CompeteHealth.TestComponents.creation" time="85.476">
+  <testcase name="challengecreationTest[akshittested@yopmail.com, Hello@123, Time Challenge Automation, Active Minutes, Walk/Run, 20, 2, [Ljava.lang.Integer;@6c298dc, 6-Month Average, 2, null, Creating a tiered challenge for dynamic time, 29-07-2025, 17:00, 30-07-2025, 11:00](1)" classname="CompeteHealth.TestComponents.creation" time="90.469">
     <system-out><![CDATA[&amp#27;[38;5;112m[Appium]&amp#27;[0m Welcome to Appium v2.18.0
 &amp#27;[38;5;112m[Appium]&amp#27;[0m Non-default server args:
 &amp#27;[38;5;112m[Appium]&amp#27;[0m { address: &amp#27;[32m'127.0.0.1'&amp#27;[39m }
@@ -67,18 +67,91 @@
 &amp#27;[38;5;112m[Appium]&amp#27;[0m Attempting to load driver xcuitest...
 &amp#27;[38;5;112m[Appium]&amp#27;[0m Attempting to load driver gecko...
 &amp#27;[38;5;112m[Appium]&amp#27;[0m Requiring driver at C:\Users\user.DESKTOP-I9IFEEO\.appium\node_modules\appium-uiautomator2-driver\build\index.js
-&amp#27;[38;5;112m[Appium]&amp#27;[0m Requiring driver at C:\Users\user.DESKTOP-I9IFEEO\.appium\node_modules\appium-xcuitest-driver\build\index.js
 &amp#27;[38;5;112m[Appium]&amp#27;[0m Requiring driver at C:\Users\user.DESKTOP-I9IFEEO\.appium\node_modules\appium-geckodriver\build\index.js
-&amp#27;[38;5;112m[Appium]&amp#27;[0m AndroidUiautomator2Driver has been successfully loaded in 1.188s
-&amp#27;[38;5;112m[Appium]&amp#27;[0m XCUITestDriver has been successfully loaded in 2.399s
-&amp#27;[38;5;112m[Appium]&amp#27;[0m GeckoDriver has been successfully loaded in 2.511s
-&amp#27;[38;5;86m[HTTP]&amp#27;[0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
-&amp#27;[38;5;112m[Appium]&amp#27;[0m Could not configure Appium server. It's possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 127.0.0.1:4723
-&amp#27;[38;5;112m[Appium]&amp#27;[0m Error: listen EADDRINUSE: address already in use 127.0.0.1:4723
-    at Server.setupListenHandle [as _listen2] (node:net:1939:16)
-    at listenInCluster (node:net:1996:12)
-    at node:net:2205:7
-    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+&amp#27;[38;5;112m[Appium]&amp#27;[0m Requiring driver at C:\Users\user.DESKTOP-I9IFEEO\.appium\node_modules\appium-xcuitest-driver\build\index.js
+&amp#27;[38;5;112m[Appium]&amp#27;[0m AndroidUiautomator2Driver has been successfully loaded in 1.697s
+&amp#27;[38;5;112m[Appium]&amp#27;[0m GeckoDriver has been successfully loaded in 1.840s
+&amp#27;[38;5;112m[Appium]&amp#27;[0m XCUITestDriver has been successfully loaded in 3.458s
+&amp#27;[38;5;112m[Appium]&amp#27;[0m Appium REST http interface listener started on http://127.0.0.1:4723
+&amp#27;[38;5;112m[Appium]&amp#27;[0m Available drivers:
+&amp#27;[38;5;112m[Appium]&amp#27;[0m   - uiautomator2@4.2.3 (automationName 'UiAutomator2')
+&amp#27;[38;5;112m[Appium]&amp#27;[0m   - xcuitest@9.2.4 (automationName 'XCUITest')
+&amp#27;[38;5;112m[Appium]&amp#27;[0m   - gecko@1.4.3 (automationName 'Gecko')
+&amp#27;[38;5;112m[Appium]&amp#27;[0m No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+&amp#27;[38;5;192m[b791efa5]&amp#27;[0m&amp#27;[38;5;86m[HTTP]&amp#27;[0m &amp#27;[37m-->&amp#27;[39m &amp#27;[37mGET&amp#27;[39m &amp#27;[37m/session/b791efa5-e8f4-4c33-85ba-5d41a03dfb32/timeouts&amp#27;[39m &amp#27;[90m{}&amp#27;[39m
+&amp#27;[38;5;192m[b791efa5]&amp#27;[0m&amp#27;[38;5;204m[AppiumDriver@9566]&amp#27;[0m Encountered internal error running command: NoSuchDriverError: A session is either terminated or not started
+    at asyncHandler (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:311:15)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:514:15
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at logger (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at jsonParser (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\types\json.js:113:7)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:91:12)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at methodOverride (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\method-override\index.js:65:14)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+&amp#27;[38;5;192m[b791efa5]&amp#27;[0m&amp#27;[38;5;86m[HTTP]&amp#27;[0m &amp#27;[37m<-- GET /session/b791efa5-e8f4-4c33-85ba-5d41a03dfb32/timeouts &amp#27;[39m&amp#27;[33m404&amp#27;[39m &amp#27;[90m21 ms - 5394&amp#27;[39m &amp#27;[90m&amp#27;[39m
+&amp#27;[38;5;192m[b791efa5]&amp#27;[0m&amp#27;[38;5;86m[HTTP]&amp#27;[0m &amp#27;[37m-->&amp#27;[39m &amp#27;[37mGET&amp#27;[39m &amp#27;[37m/session/b791efa5-e8f4-4c33-85ba-5d41a03dfb32/timeouts&amp#27;[39m &amp#27;[90m{}&amp#27;[39m
+&amp#27;[38;5;192m[b791efa5]&amp#27;[0m&amp#27;[38;5;204m[AppiumDriver@9566]&amp#27;[0m Encountered internal error running command: NoSuchDriverError: A session is either terminated or not started
+    at asyncHandler (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:311:15)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:514:15
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at logger (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at jsonParser (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\types\json.js:113:7)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:91:12)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+    at methodOverride (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\method-override\index.js:65:14)
+    at Layer.handle [as handle_request] (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\user.DESKTOP-I9IFEEO\AppData\Roaming\npm\node_modules\appium\node_modules\express\lib\router\index.js:280:10)
+&amp#27;[38;5;192m[b791efa5]&amp#27;[0m&amp#27;[38;5;86m[HTTP]&amp#27;[0m &amp#27;[37m<-- GET /session/b791efa5-e8f4-4c33-85ba-5d41a03dfb32/timeouts &amp#27;[39m&amp#27;[33m404&amp#27;[39m &amp#27;[90m2 ms - 5394&amp#27;[39m &amp#27;[90m&amp#27;[39m
 ]]></system-out>
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation

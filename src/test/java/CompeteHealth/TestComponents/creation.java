@@ -23,7 +23,7 @@ public class creation extends BaseTest{
 				"20", 2, new Integer[]{60, 40},
 				"6-Month Average", "2",
 				null, "Creating a tiered challenge for dynamic time",
-				"29-07-2025", "15:00", "30-07-2025", "19:00"
+				"29-07-2025", "17:00", "30-07-2025", "11:00"
 			}
 		};
 	}

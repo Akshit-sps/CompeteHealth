@@ -298,7 +298,5 @@ public class ChallengeCreation extends AndroidActionClass{
 	        WebElement subTypeElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(subTypeXpath)));
 	        subTypeElement.click();
 	    }
-	}
-    
-    
+	}    
 }
