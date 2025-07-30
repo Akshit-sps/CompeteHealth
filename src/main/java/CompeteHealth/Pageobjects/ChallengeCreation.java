@@ -181,12 +181,15 @@ public class ChallengeCreation extends AndroidActionClass{
         confirmclick.click();
         ScrolltoText("Submit");
     }
-	public void entryfee(String entryFee, int numWinners,Integer[] percentages) throws InterruptedException {
+	public void entryfee(String entryFee) throws InterruptedException {
         waitUntilVisible(entryFeeField);
         entryFeeField.sendKeys(entryFee);
-        setWinnersAndPercentages(numWinners,percentages);
-        ScrolltoText("Submit");
+        
     }
+	public void nontieredchallenge(String numWinners,String[] percentages) {
+		setWinnersAndPercentages(numWinners,percentages);
+        ScrolltoText("Submit");
+	}
 	
 	public void tieredchallenge(String grpstructure,String numofgroup) {
     	tieredchallenge.click();
@@ -240,7 +243,9 @@ public class ChallengeCreation extends AndroidActionClass{
         confirmBtn.click();
 
         waitUntilClickable(submitBtn);
+        
         submitBtn.click();
+        waitForSeconds(5);
 	}
 	public void backtohomepage() {
 		waitUntilVisible(joinchallenge);
@@ -273,7 +278,7 @@ public class ChallengeCreation extends AndroidActionClass{
             waitForSeconds(1);
         }
 	}
-	public void setWinnersAndPercentages(int numWinners, Integer[] percentages) {
+	public void setWinnersAndPercentages(String numWinners, String[] percentages) {
 	    // 1. Click the dropdown and select the number of winners
 		waitUntilClickable(numWinnersDropdown);
 	    numWinnersDropdown.click();
@@ -284,7 +289,9 @@ public class ChallengeCreation extends AndroidActionClass{
 
 	    // 2. Fill in the percentage fields for each place
 	    String[] placeSuffix = {"st", "nd", "rd", "th", "th"}; // Extend as needed
-	    for (int i = 0; i < numWinners; i++) {
+	    int number = Integer.parseInt(numWinners);
+	    System.out.println(number);
+	    for (int i = 0; i < number; i++) {
 	        String place = (i + 1) + placeSuffix[Math.min(i, 4)];
 	        String xpath = "//android.widget.EditText[@text='" + place + " place payout (%)']";
 	        WebElement percentField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));

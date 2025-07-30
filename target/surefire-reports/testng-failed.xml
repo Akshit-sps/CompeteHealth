@@ -6,9 +6,8 @@
       <class name="CompeteHealth.TestComponents.creation">
         <methods>
           <include name="configureAppium"/>
-          <include name="Setup"/>
+          <include name="ChallengeCreation" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="challengecreationTest" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- CompeteHealth.TestComponents.creation -->
     </classes>

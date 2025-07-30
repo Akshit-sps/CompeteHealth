@@ -100,7 +100,7 @@ public class AndroidActionClass {
 						"percent",0.75));
 	}
 	public void tapOnElement(int offsetX, int offsetY) {
-	    ((JavascriptExecutor) driver).executeScript("mobile: gesture", 
+	    ((JavascriptExecutor) driver).executeScript("mobile: clickGesture", 
 	        ImmutableMap.of(
 	            "action", "tap",
 	            "x", offsetX,
