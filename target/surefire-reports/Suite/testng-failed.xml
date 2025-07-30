@@ -8,7 +8,7 @@
           <include name="configureAppium"/>
           <include name="Setup"/>
           <include name="tearDown"/>
-          <include name="challengecreationTest" invocation-numbers="0"/>
+          <include name="challengecreationTest" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- CompeteHealth.TestComponents.creation -->
     </classes>

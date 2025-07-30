@@ -99,6 +99,15 @@ public class AndroidActionClass {
 						"direction", direction,
 						"percent",0.75));
 	}
+	public void tapOnElement(int offsetX, int offsetY) {
+	    ((JavascriptExecutor) driver).executeScript("mobile: gesture", 
+	        ImmutableMap.of(
+	            "action", "tap",
+	            "x", offsetX,
+	            "y", offsetY
+	        )
+	    );
+	}
 	public String getScreenshotPath(String testCaseName, AndroidDriver driver) throws IOException {
 		File source = driver.getScreenshotAs(OutputType.FILE);
 		String filedestination = System.getProperty("user.dir")+"//reports"+testCaseName+".png";

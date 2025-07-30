@@ -1,5 +1,9 @@
 package CompeteHealth.TestComponents;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 //import org.testng.annotations.BeforeMethod;
@@ -14,18 +18,31 @@ public class creation extends BaseTest{
 		login.PreSetup();
 	}
 	@DataProvider(name = "challengeData")
-	public Object[][] getChallengeData() {
-		return new Object[][] {
-			// email, password, name, typeName, subType, entryFee, numWinners, percentages, tieredStructure, numOfGroups, privatePass, description, startDate, startTime, endDate, endTime
-			{
-				"akshittested@yopmail.com", "Hello@123",
-				"Time Challenge Automation", "Active Minutes", "Walk/Run",
-				"20", 2, new Integer[]{60, 40},
-				"6-Month Average", "2",
-				null, "Creating a tiered challenge for dynamic time",
-				"29-07-2025", "17:00", "30-07-2025", "11:00"
-			}
-		};
+	public Object[][] getChallengeData() throws IOException {
+		List<HashMap<String, Object>> data = utils.getJasonDataToMap(System.getProperty("user.dir") + "//src//test//java//CompeteHealth//TestData//data.json");
+		Object[][] result = new Object[data.size()][16];
+		for (int i = 0; i < data.size(); i++) {
+			HashMap<String, Object> map = data.get(i);
+			result[i][0] = map.get("email");
+			result[i][1] = map.get("password");
+			result[i][2] = map.get("name");
+			result[i][3] = map.get("typeName");
+			result[i][4] = map.get("subType");
+			result[i][5] = map.get("entryFee");
+			result[i][6] = map.get("numWinners");
+			List<?> percentagesList = (List<?>) map.get("percentages");
+			Integer[] percentagesArr = percentagesList.toArray(new Integer[0]);
+			result[i][7] = percentagesArr;
+			result[i][8] = map.get("tieredStructure");
+			result[i][9] = map.get("numOfGroups");
+			result[i][10] = map.get("privatePass");
+			result[i][11] = map.get("description");
+			result[i][12] = map.get("startDate");
+			result[i][13] = map.get("startTime");
+			result[i][14] = map.get("endDate");
+			result[i][15] = map.get("endTime");
+		}
+		return result;
 	}
 	
 	@Test(dataProvider = "challengeData",groups={"regression"})
@@ -50,5 +67,6 @@ public class creation extends BaseTest{
 			challenge.privatechallenge(privatePass);
 		}
 		challenge.discriptionandcamara(description);
+		challenge.backtohomepage();
 	}
 }

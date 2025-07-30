@@ -82,7 +82,7 @@ public class ChallengeCreation extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id=\"android:id/button1\"]")
 	private WebElement confirmBtn;
 
-	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Submit\"]")
+	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='Submit']")
 	private WebElement submitBtn;
 	
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
@@ -108,6 +108,14 @@ public class ChallengeCreation extends AndroidActionClass{
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Select time']")
 	private WebElement selecttime;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Join Challenge']")
+	private WebElement joinchallenge;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Trending Challenges']")
+	private WebElement hometrendingchallenge;
+	//android.widget.TextView[@text="Trending Challenges"]
+
 	
 	public void nameandtype(String name,String typeName,String subtypename){
 		plusicon.click();
@@ -233,6 +241,11 @@ public class ChallengeCreation extends AndroidActionClass{
 
         waitUntilClickable(submitBtn);
         submitBtn.click();
+	}
+	public void backtohomepage() {
+		waitUntilVisible(joinchallenge);
+		tapOnElement(55, 126);
+		waitUntilVisible(hometrendingchallenge);
 	}
 	public void scrolldate(int numofswipe,int x, int y, int x1, int y1) throws InterruptedException {
         for (int i = 0; i < numofswipe; i++) {
