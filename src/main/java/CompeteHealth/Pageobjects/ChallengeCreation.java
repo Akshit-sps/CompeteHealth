@@ -20,8 +20,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class ChallengeCreation extends AndroidActionClass{
-	
+
 	AndroidDriver driver;  
+	private static boolean permissionGranted = false;
+	
 	public ChallengeCreation(AndroidDriver driver) {
 		super(driver);
 		this.driver=driver; 
@@ -114,8 +116,9 @@ public class ChallengeCreation extends AndroidActionClass{
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Trending Challenges']")
 	private WebElement hometrendingchallenge;
-	//android.widget.TextView[@text="Trending Challenges"]
-
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Challenge Sub Type']")
+	private WebElement subtype;
 	
 	public void nameandtype(String name,String typeName,String subtypename){
 		plusicon.click();
@@ -213,18 +216,25 @@ public class ChallengeCreation extends AndroidActionClass{
     	privatepassword.sendKeys(privatepass);
     	ScrolltoText("Submit");
     }
-	
-	public void discriptionandcamara(String description) {
+	public void discription(String description) {
 		waitUntilVisible(descField);
         descField.sendKeys(description);
-        
+	}
+	public void camara() {
         waitUntilClickable(uploadBtn);
         uploadBtn.click();
         
         waitUntilClickable(takePicBtn);
         takePicBtn.click();
-        
-        permissionforpictures.click();
+        if (!permissionGranted) {
+            try {
+                waitUntilClickable(permissionforpictures);
+                permissionforpictures.click();
+                permissionGranted = true;
+            } catch (Exception e) {
+                System.out.println("Permission dialog not found or already granted");
+            }
+        }
         
         waitUntilClickable(shutterBtn);
         shutterBtn.click();
@@ -290,7 +300,7 @@ public class ChallengeCreation extends AndroidActionClass{
 	    // 2. Fill in the percentage fields for each place
 	    String[] placeSuffix = {"st", "nd", "rd", "th", "th"}; // Extend as needed
 	    int number = Integer.parseInt(numWinners);
-	    System.out.println(number);
+	    
 	    for (int i = 0; i < number; i++) {
 	        String place = (i + 1) + placeSuffix[Math.min(i, 4)];
 	        String xpath = "//android.widget.EditText[@text='" + place + " place payout (%)']";
@@ -301,6 +311,7 @@ public class ChallengeCreation extends AndroidActionClass{
 	}
 	public void selectChallengeTypeAndSubType(String typeName, String subType) {
 		challengentype.click();
+		waitForSeconds(3);
 	    String typeXpath = "//android.view.ViewGroup[@content-desc='" + typeName + "']";
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    WebElement typeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(typeXpath)));

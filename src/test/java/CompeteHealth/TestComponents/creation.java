@@ -53,7 +53,8 @@ public class creation extends BaseTest {
             if (privatePass != null) {
                 challenge.privatechallenge(privatePass);
             }
-            challenge.discriptionandcamara(description);
+            challenge.discription(description);
+            challenge.camara();
             challenge.backtohomepage();
         }
     }
