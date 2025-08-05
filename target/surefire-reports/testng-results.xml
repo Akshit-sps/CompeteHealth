@@ -1,31 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-31T13:05:02 IST" name="Suite" finished-at="2025-07-31T13:08:07 IST" duration-ms="184578">
+  <suite started-at="2025-08-05T14:40:22 IST" name="Suite" finished-at="2025-08-05T14:40:40 IST" duration-ms="18313">
     <groups>
       <group name="regression">
         <method signature="creation.ChallengeCreation(java.util.List)[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" name="ChallengeCreation" class="CompeteHealth.TestComponents.creation"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2025-07-31T13:05:02 IST" name="Data-driven testing in code itself" finished-at="2025-07-31T13:08:07 IST" duration-ms="184578">
+    <test started-at="2025-08-05T14:40:22 IST" name="Data-driven testing in code itself" finished-at="2025-08-05T14:40:40 IST" duration-ms="18313">
       <class name="CompeteHealth.TestComponents.creation">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" started-at="2025-07-31T13:05:02 IST" name="configureAppium" finished-at="2025-07-31T13:05:09 IST" duration-ms="7095" status="PASS">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" started-at="2025-08-05T14:40:22 IST" name="configureAppium" finished-at="2025-08-05T14:40:29 IST" duration-ms="7260" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="ChallengeCreation(java.util.List)[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" started-at="2025-07-31T13:05:10 IST" name="ChallengeCreation" data-provider="challengeData" finished-at="2025-07-31T13:08:06 IST" duration-ms="176461" status="PASS">
+        <test-method signature="ChallengeCreation(java.util.List)[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" started-at="2025-08-05T14:40:29 IST" name="ChallengeCreation" data-provider="challengeData" finished-at="2025-08-05T14:40:39 IST" duration-ms="10104" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[{entryFee=20, numOfGroups=null, endDate=31-07-2025, typeName=Step, percentages=[60, 40], description=Creating a json challenge-11, numWinners=2, password=Hello@123, privatePass=null, name=Json-38 Challenge Automation, tieredStructure=null, subType=null, startTime=16:00, endTime=22:00, email=akshittested@yopmail.com, startDate=31-07-2025}, {entryFee=20, numOfGroups=2, endDate=31-07-2025, typeName=Calories Burned, percentages=null, description=Creating a json challenge-12, numWinners=null, privatePass=null, name=Json-36 Challenge Automation, tieredStructure=6-Month Average, subType=Walk/Run, startTime=17:00, endTime=23:00, startDate=31-07-2025}]]]>
+                <![CDATA[[{entryFee=20, numOfGroups=null, endDate=05-08-2025, typeName=Step, percentages=[60, 40], description=Creating a json challenge-11, numWinners=2, password=Hello@123, privatePass=null, name=Step Challenge Automation, tieredStructure=null, subType=null, startTime=13:00, endTime=22:00, email=akshittested@yopmail.com, startDate=05-08-2025}, {entryFee=20, numOfGroups=2, endDate=05-08-2025, typeName=Calories Burned, percentages=null, description=Creating a json challenge-12, numWinners=null, privatePass=null, name=Calories Challenge Automation, tieredStructure=6-Month Average, subType=Walk/Run, startTime=13:00, endTime=23:00, startDate=05-08-2025}]]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Can't locate an element by this strategy: By.chained({By.xpath: //android.view.ViewGroup[@content-desc='Next']})]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.xpath: //android.view.ViewGroup[@content-desc='Next']})
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
+at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$F0dvE7o7.click(Unknown Source)
+at CompeteHealth.Pageobjects.Loginpage.onboarding(Loginpage.java:59)
+at CompeteHealth.TestComponents.creation.ChallengeCreation(creation.java:22)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@62d73ead (tried for 1 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+... 35 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.view.ViewGroup[@content-desc='Next']})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: driver.version: RemoteWebDriver
+at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:54)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 37 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChallengeCreation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" started-at="2025-07-31T13:08:06 IST" name="tearDown" finished-at="2025-07-31T13:08:07 IST" duration-ms="767" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.creation@dd8ba08]" started-at="2025-08-05T14:40:39 IST" name="tearDown" finished-at="2025-08-05T14:40:40 IST" duration-ms="690" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

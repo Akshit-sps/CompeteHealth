@@ -7,16 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import CompeteHealth.utils.AndroidActionClass;
 import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class Loginpage {
+public class Loginpage extends AndroidActionClass{
 	AndroidDriver driver;
 	
 	public Loginpage(AndroidDriver driver) {
-//		super(driver);
+		super(driver);
 		this.driver=driver; 
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
@@ -42,23 +43,44 @@ public class Loginpage {
 	@AndroidFindBy(id="com.android.permissioncontroller:id/permission_allow_button")
 	private WebElement permissionfour;
 	
+	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='Next']")
+	private WebElement orboardingnext;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Steps, active minutes, distance, and more']")
+	private WebElement secondpageonboarding;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Compete 1-on-1, in a tier, or all together']")
+	private WebElement thirdpageonboarding;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Use a watch or ring to track activity then receive payouts']")
+	private WebElement forthpageonboarding;
+	
+	public void onboarding() {
+		permissionfour.click();
+		orboardingnext.click();
+		waitUntilVisible(secondpageonboarding);
+		orboardingnext.click();
+		waitUntilVisible(thirdpageonboarding);
+		orboardingnext.click();
+		waitUntilVisible(forthpageonboarding);
+		orboardingnext.click();
+	}
+	
 	public void PreSetup() {
 		((InteractsWithApps) driver).terminateApp("com.competehealth");
 		((InteractsWithApps) driver).activateApp("com.competehealth");
 	}
 	
 	public void login(String name,String pass) {
-		permissionfour.click();
+		
 		username.sendKeys(name);
 		password.sendKeys(pass);
 		signin.click();
 	}
 	public ChallengeCreation permissions() throws InterruptedException {
-//		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(permissionone)).click();
 		wait.until(ExpectedConditions.elementToBeClickable(permissiontwo)).click();
-//  	Thread.sleep(4000);
 		wait.until(ExpectedConditions.elementToBeClickable(permissionthree)).click();
 		return new ChallengeCreation(driver);
 	}

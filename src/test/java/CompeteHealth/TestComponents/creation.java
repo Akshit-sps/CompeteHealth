@@ -19,6 +19,7 @@ public class creation extends BaseTest {
     @SuppressWarnings({ "unchecked"})
 	@Test(dataProvider = "challengeData", groups = {"regression"})
     public void ChallengeCreation(List<HashMap<String, Object>> dataList) throws InterruptedException {
+    	login.onboarding();
         String email = (String) dataList.get(0).get("email");
         String password = (String) dataList.get(0).get("password");
         login.login(email, password);

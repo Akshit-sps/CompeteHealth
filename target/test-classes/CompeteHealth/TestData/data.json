@@ -2,7 +2,7 @@
   {
     "email": "akshittested@yopmail.com",
     "password": "Hello@123",
-    "name": "Json-38 Challenge Automation",
+    "name": "Step Challenge Automation",
     "typeName": "Step",
     "subType": null,
     "entryFee": "20",
@@ -12,13 +12,13 @@
     "numOfGroups": null,
     "privatePass": null,
     "description": "Creating a json challenge-11",
-    "startDate": "31-07-2025",
-    "startTime": "16:00",
-    "endDate": "31-07-2025",
+    "startDate": "05-08-2025",
+    "startTime": "13:00",
+    "endDate": "05-08-2025",
     "endTime": "22:00"
   },
   {
-    "name": "Json-36 Challenge Automation",
+    "name": "Calories Challenge Automation",
     "typeName": "Calories Burned",
     "subType": "Walk/Run",
     "entryFee": "20",
@@ -28,9 +28,9 @@
     "numOfGroups": "2",
     "privatePass": null,
     "description": "Creating a json challenge-12",
-    "startDate": "31-07-2025",
-    "startTime": "17:00",
-    "endDate": "31-07-2025",
+    "startDate": "05-08-2025",
+    "startTime": "13:00",
+    "endDate": "05-08-2025",
     "endTime": "23:00"
   }
 ]
