@@ -44,7 +44,7 @@ public class AndroidActionClass {
 		return data;
 	}
 	public void waitForElementToAppear(WebElement ele,AndroidDriver driver) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.attributeContains((ele), "text", "cart"));
 	}
 	public void waitForSeconds(int seconds) {
@@ -56,12 +56,12 @@ public class AndroidActionClass {
     }
 
 	public void waitUntilClickable(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 	public void waitUntilVisible(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 

@@ -1,11 +1,8 @@
 package CompeteHealth.Pageobjects;
 
-import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import CompeteHealth.utils.AndroidActionClass;
 import io.appium.java_client.InteractsWithApps;
@@ -78,10 +75,10 @@ public class Loginpage extends AndroidActionClass{
 		signin.click();
 	}
 	public ChallengeCreation permissions() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(permissionone)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(permissiontwo)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(permissionthree)).click();
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		wait.until(ExpectedConditions.elementToBeClickable(permissionone)).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(permissiontwo)).click();s
+//		wait.until(ExpectedConditions.elementToBeClickable(permissionthree)).click();
 		return new ChallengeCreation(driver);
 	}
 }

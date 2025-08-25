@@ -12,6 +12,10 @@ import CompeteHealth.Utils.BaseTest;
 public class creation extends BaseTest {
     @DataProvider(name = "challengeData")
     public Object[][] getChallengeData() throws IOException {
+        // Ensure utils is initialized before using it
+        if (utils == null) {
+            throw new RuntimeException("AndroidActionClass (utils) is not initialized. Check if driver is properly set up.");
+        }
         List<HashMap<String, Object>> data = utils.getJasonDataToMap(System.getProperty("user.dir") + "//src//test//java//CompeteHealth//TestData//data.json");
         return new Object[][] { { data } }; 
     }
@@ -19,7 +23,11 @@ public class creation extends BaseTest {
     @SuppressWarnings({ "unchecked"})
 	@Test(dataProvider = "challengeData", groups = {"regression"})
     public void ChallengeCreation(List<HashMap<String, Object>> dataList) throws InterruptedException {
-    	login.onboarding();
+        // Ensure required objects are initialized
+        if (login == null) {
+            throw new RuntimeException("Loginpage object is not initialized. Check if driver is properly set up.");
+        }
+//    	login.onboarding();
         String email = (String) dataList.get(0).get("email");
         String password = (String) dataList.get(0).get("password");
         login.login(email, password);
@@ -48,7 +56,7 @@ public class creation extends BaseTest {
             if(numWinners != null && percentages!= null) {
             	challenge.nontieredchallenge(numWinners, percentages);
             }
-            if (tieredStructure != null && numOfGroups != null) {
+            if (tieredStructure != null) {
                 challenge.tieredchallenge(tieredStructure, numOfGroups);
             }
             if (privatePass != null) {

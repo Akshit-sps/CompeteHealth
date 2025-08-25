@@ -29,14 +29,15 @@ public class ChallengeCreation extends AndroidActionClass{
 		this.driver=driver; 
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-	
-	@AndroidFindBy(xpath="//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget"
-			+ ".FrameLayout/android.view.ViewGroup/android"
-			+ ".view.ViewGroup/android.view.ViewGroup[1]/android.widget"
-			+ ".FrameLayout/android.view.ViewGroup/android.view"
-			+ ".ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view"
-			+ ".ViewGroup/android.view.ViewGroup[2]/android.view"
-			+ ".ViewGroup[2]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+
+	@AndroidFindBy(xpath="//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/"
+			+ "android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup"
+			+ "/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup"
+			+ "/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/"
+			+ "android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/"
+			+ "com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView\n"
+			+ "")
+
 	private WebElement plusicon;
 	
 	@AndroidFindBy(xpath="//android.widget.EditText[@text='Challenge Title']")
@@ -80,12 +81,15 @@ public class ChallengeCreation extends AndroidActionClass{
 
 	@AndroidFindBy(xpath="//android.widget.ImageView[@content-desc=\"Shutter\"]")
 	private WebElement shutterBtn;
-
+	
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id=\"android:id/button1\"]")
 	private WebElement confirmBtn;
 
 	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='Submit']")
 	private WebElement submitBtn;
+	
+	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Done']")
+	private WebElement donepicBtn;
 	
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_foreground_only_button']")
 	private WebElement permissionforpictures;
@@ -121,8 +125,9 @@ public class ChallengeCreation extends AndroidActionClass{
 	private WebElement subtype;
 	
 	public void nameandtype(String name,String typeName,String subtypename){
+		waitUntilVisible(plusicon);
 		plusicon.click();
-		waitForSeconds(10);
+		waitUntilVisible(challengename);
 		challengename.sendKeys(name);
 		selectChallengeTypeAndSubType(typeName,subtypename);
 		
@@ -140,12 +145,12 @@ public class ChallengeCreation extends AndroidActionClass{
 
         startdate.click();
         waitUntilVisible(selectdate); // Wait for date picker to be ready
-        // day
-        if (dayDiff != 0) scrolldate(Math.abs(dayDiff), 248, 799, 248, dayDiff > 0 ? 699 : 899);
+        // day(x,y,x1,y1)     
+        if (dayDiff != 0) scrolldate(Math.abs(dayDiff), 601, 1153, 248, dayDiff > 0 ? 990 : 1320);
         // month
-        if (monthDiff != 0) scrolldate(Math.abs(monthDiff), 360, 799, 360, monthDiff > 0 ? 699 : 899);
+        if (monthDiff != 0) scrolldate(Math.abs(monthDiff), 401, 1153, 401, monthDiff > 0 ? 990 : 1320);
         // year
-        if (yearDiff != 0) scrolldate(Math.abs(yearDiff), 472, 799, 472, yearDiff > 0 ? 699 : 899);
+        if (yearDiff != 0) scrolldate(Math.abs(yearDiff), 731, 1153, 731, yearDiff > 0 ? 990 : 1320);
         confirmclick.click();
 
         LocalTime inputStartTime = LocalTime.parse(startTime, timeFormatter);
@@ -154,9 +159,9 @@ public class ChallengeCreation extends AndroidActionClass{
         starttime.click();
         waitUntilVisible(selecttime); // Wait for time picker to be ready
         // Always scroll hour first
-        if (hourDiff != 0) scrolldate(Math.abs(hourDiff), 314, 799, 314, hourDiff > 0 ? 699 : 899);
+        if (hourDiff != 0) scrolldate(Math.abs(hourDiff), 476, 1153, 476, hourDiff > 0 ? 990 : 1320);
         waitForSeconds(1); // Wait 1 second before scrolling minutes
-        if (minuteDiff != 0) scrollminutes(406,799,406,899);
+        if (minuteDiff != 0) scrollminutes(614,1153,610,1320);
         confirmclick.click();
 
         LocalDate inputEndDate = LocalDate.parse(endDate, dateFormatter);
@@ -166,20 +171,19 @@ public class ChallengeCreation extends AndroidActionClass{
 
         enddate.click();
         waitUntilVisible(selectdate); // Wait for date picker to be ready
-        if (endDayDiff != 0) scrolldate(Math.abs(endDayDiff), 248, 799, 248, endDayDiff > 0 ? 699 : 899);
-        if (endMonthDiff != 0) scrolldate(Math.abs(endMonthDiff), 360, 799, 360, endMonthDiff > 0 ? 699 : 899);
-        if (endYearDiff != 0) scrolldate(Math.abs(endYearDiff), 472, 799, 472, endYearDiff > 0 ? 699 : 899);
+        if (endDayDiff != 0) scrolldate(Math.abs(endDayDiff), 601, 1153, 248, dayDiff > 0 ? 990 : 1320);
+        if (endMonthDiff != 0) scrolldate(Math.abs(endMonthDiff), 401, 1153, 401, monthDiff > 0 ? 990 : 1320);
+        if (endYearDiff != 0) scrolldate(Math.abs(endYearDiff), 731, 1153, 731, yearDiff > 0 ? 990 : 1320);
         button.click();
 
         LocalTime inputEndTime = LocalTime.parse(endTime, timeFormatter);
         int endHourDiff = inputEndTime.getHour() - inputStartTime.getHour();
         int endMinuteDiff = inputEndTime.getMinute() - inputStartTime.getMinute();
         endtime.click();
-        waitUntilVisible(selecttime); // Wait for time picker to be ready
-        // Always scroll hour first
-        if (endHourDiff != 0) scrolldate(Math.abs(endHourDiff), 314, 799, 314, endHourDiff > 0 ? 699 : 899);
-        waitForSeconds(1); // Wait 1 second before scrolling minutes
-        if (endMinuteDiff != 0) scrollminutes(406,799,406,899);
+        waitUntilVisible(selecttime);	
+        if (endHourDiff != 0) scrolldate(Math.abs(endHourDiff), 401, 1153, 401, endHourDiff > 0 ? 990 : 1320);
+        waitForSeconds(1); 
+        if (endMinuteDiff != 0) scrollminutes(551,1153,551,1320);
         waitForSeconds(1);
         confirmclick.click();
         ScrolltoText("Submit");
@@ -239,15 +243,19 @@ public class ChallengeCreation extends AndroidActionClass{
         waitUntilClickable(shutterBtn);
         shutterBtn.click();
         
-        waitForSeconds(2); 
-
-        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        Sequence tapSequence = new Sequence(finger, 1);
-        tapSequence.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), 430, 1119));
-        tapSequence.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        tapSequence.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        driver.perform(Arrays.asList(tapSequence));
-        waitForSeconds(5);
+        waitForSeconds(10);
+        
+        if (donepicBtn.isDisplayed()) {
+        	donepicBtn.click();
+        }else {
+        	PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+            Sequence tapSequence = new Sequence(finger, 1);
+            tapSequence.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), 539, 2121));
+            tapSequence.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+            tapSequence.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+            driver.perform(Arrays.asList(tapSequence));
+            waitForSeconds(5);
+        }
         
         waitUntilClickable(confirmBtn);
         confirmBtn.click();
@@ -259,7 +267,7 @@ public class ChallengeCreation extends AndroidActionClass{
 	}
 	public void backtohomepage() {
 		waitUntilVisible(joinchallenge);
-		tapOnElement(55, 126);
+		tapOnElement(67, 67);
 		waitUntilVisible(hometrendingchallenge);
 	}
 	public void scrolldate(int numofswipe,int x, int y, int x1, int y1) throws InterruptedException {
