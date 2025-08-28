@@ -12,6 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import CompeteHealth.Pageobjects.ChallengeCreation;
+import CompeteHealth.Pageobjects.DiscoverChallenge;
 import CompeteHealth.Pageobjects.Loginpage;
 import CompeteHealth.utils.AndroidActionClass;
 import io.appium.java_client.android.AndroidDriver;
@@ -26,6 +27,7 @@ public class BaseTest{
 	public ChallengeCreation challenge;
 	public Loginpage login;
 	public AndroidActionClass utils;
+	public DiscoverChallenge discover;
 	
 	@BeforeClass(alwaysRun=true)
 	public void configureAppium() throws IOException, URISyntaxException, InterruptedException {
@@ -74,6 +76,7 @@ public class BaseTest{
 			if (driver != null) {
 				login = new Loginpage(driver);
 				utils = new AndroidActionClass(driver);
+				discover = new DiscoverChallenge(driver);
 			} else {
 				throw new RuntimeException("Failed to create AndroidDriver instance");
 			}

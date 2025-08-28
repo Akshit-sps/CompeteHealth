@@ -53,7 +53,7 @@ public class Loginpage extends AndroidActionClass{
 	private WebElement forthpageonboarding;
 	
 	public void onboarding() {
-		permissionfour.click();
+//		permissionfour.click();
 		orboardingnext.click();
 		waitUntilVisible(secondpageonboarding);
 		orboardingnext.click();
@@ -77,7 +77,7 @@ public class Loginpage extends AndroidActionClass{
 	public ChallengeCreation permissions() throws InterruptedException {
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		wait.until(ExpectedConditions.elementToBeClickable(permissionone)).click();
-//		wait.until(ExpectedConditions.elementToBeClickable(permissiontwo)).click();s
+//		wait.until(ExpectedConditions.elementToBeClickable(permissiontwo)).click();
 //		wait.until(ExpectedConditions.elementToBeClickable(permissionthree)).click();
 		return new ChallengeCreation(driver);
 	}

@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CompeteHealth.TestComponents.creation">
+      <class name="CompeteHealth.TestComponents.Creation">
         <methods>
           <include name="configureAppium"/>
-          <include name="Setup"/>
           <include name="tearDown"/>
-          <include name="challengecreationTest" invocation-numbers="0"/>
+          <include name="challengejoin"/>
         </methods>
-      </class> <!-- CompeteHealth.TestComponents.creation -->
+      </class> <!-- CompeteHealth.TestComponents.Creation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -5,8 +5,9 @@
     <classes>
       <class name="CompeteHealth.TestComponents.creation">
         <methods>
+          <include name="challengejoin"/>
           <include name="configureAppium"/>
-          <include name="ChallengeCreation" invocation-numbers="0"/>
+          <include name="ChallengeCreation"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- CompeteHealth.TestComponents.creation -->

@@ -9,10 +9,42 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Data-driven testing in code itself</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">639,174</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Data-driven testing in code itself</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">73,079</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Data-driven testing in code itself &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">CompeteHealth.TestComponents.creation</td><td><a href="#m0">ChallengeCreation</a></td><td rowspan="1">1756128334346</td><td rowspan="1">602307</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Data-driven testing in code itself &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">CompeteHealth.TestComponents.creation</td><td><a href="#m0">configureAppium</a></td><td rowspan="1">1756188631650</td><td rowspan="1">72995</td></tr><tr><th colspan="4">Data-driven testing in code itself &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">CompeteHealth.TestComponents.creation</td><td><a href="#m1">ChallengeCreation</a></td><td rowspan="1">1756188704695</td><td rowspan="1">0</td></tr><tr class="failedeven"><td><a href="#m2">challengejoin</a></td><td rowspan="1">1756188704700</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Data-driven testing in code itself</h2><h3 id="m0">CompeteHealth.TestComponents.creation#ChallengeCreation</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[{entryFee=20, numOfGroups=null, endDate=27-08-2025, typeName=Sleep Tracking, percentages=[55, 45], description=Sleep tracking challenge, numWinners=2, password=Hello@123, privatePass=null, name=Automation: Sleep Challenge, tieredStructure=null, subType=null, startTime=18:00, endTime=19:00, email=akshittested@yopmail.com, startDate=26-08-2025}, {entryFee=15, numOfGroups=null, endDate=27-08-2025, typeName=Distance, percentages=[60, 40], description=Distance - Walk/Run challenge, numWinners=2, privatePass=null, name=Automation: Distance Challenge - Walk/Run, tieredStructure=null, subType=Walk/Run, startTime=18:00, endTime=20:00, startDate=26-08-2025}, {entryFee=25, numOfGroups=null, endDate=27-08-2025, typeName=Distance, percentages=[50, 30, 20], description=Distance - Cycle challenge, numWinners=3, privatePass=null, name=Automation: Distance Challenge - Cycle, tieredStructure=null, subType=Cycle, startTime=19:00, endTime=21:00, startDate=26-08-2025}, {entryFee=20, numOfGroups=null, endDate=27-08-2025, typeName=Distance, percentages=null, description=Distance - All activities, numWinners=null, privatePass=null, name=Automation: Distance Challenge - All the above, tieredStructure=Age, subType=All the above, startTime=21:00, endTime=23:00, startDate=26-08-2025}, {entryFee=15, numOfGroups=null, endDate=27-08-2025, typeName=Step, percentages=[70, 30], description=Steps challenge, numWinners=2, privatePass=null, name=Automation: Steps - 5, tieredStructure=null, subType=null, startTime=22:00, endTime=23:00, startDate=26-08-2025}, {entryFee=20, numOfGroups=2, endDate=27-08-2025, typeName=Calories Burned, percentages=null, description=Calories challenge automation, numWinners=null, privatePass=null, name=Automation: Calories Challenge Automation - 1, tieredStructure=6-Month Average, subType=Walk/Run, startTime=13:00, endTime=23:00, startDate=26-08-2025}, {entryFee=15, numOfGroups=3, endDate=27-08-2025, typeName=Active Minutes, percentages=null, description=Active Minutes - All activities, numWinners=null, privatePass=null, name=Automation: Active Minutes - All the above - 1, tieredStructure=12-Month Average, subType=All the above, startTime=17:00, endTime=18:00, startDate=26-08-2025}]</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Data-driven testing in code itself</h2><h3 id="m0">CompeteHealth.TestComponents.creation#configureAppium</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;com.competehealth&apos; application. Consider checking the driver&apos;s troubleshooting documentation. Original error: &apos;com.competehealth.SplashActivity&apos; never started. Consider checking the driver&apos;s troubleshooting documentation. 
+Host info: host: &apos;AKSHIT-PC&apos;, ip: &apos;192.168.0.159&apos;
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\user.DESKTOP-I9IFE..., appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:chromedriverExecutable: C://Users//user.DESKTOP-I9I..., appium:deviceName: Akshit_Pixel_4, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\user.DESKTOP-I9IFE..., appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:chromedriverExecutable: C://Users//user.DESKTOP-I9I..., appium:deviceName: Akshit_Pixel_4, appium:fullReset: true, appium:noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:313)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:173)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:101)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:113)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at CompeteHealth.Utils.BaseTest.configureAppium(BaseTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">CompeteHealth.TestComponents.creation#ChallengeCreation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.RuntimeException: AndroidActionClass (utils) is not initialized. Check if driver is properly set up.
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.RuntimeException: AndroidActionClass (utils) is not initialized. Check if driver is properly set up.
+	at CompeteHealth.TestComponents.creation.getChallengeData(creation.java:16)
+	... 29 more
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">CompeteHealth.TestComponents.creation#challengejoin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.RuntimeException: AndroidActionClass (utils) is not initialized. Check if driver is properly set up.
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.RuntimeException: AndroidActionClass (utils) is not initialized. Check if driver is properly set up.
+	at CompeteHealth.TestComponents.creation.getChallengeData(creation.java:16)
+	... 29 more
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
