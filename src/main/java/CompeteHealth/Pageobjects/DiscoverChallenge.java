@@ -65,7 +65,7 @@ public class DiscoverChallenge extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Pay\"]")
 	private WebElement checkoutpay;
 	
-	@AndroidFindBy(xpath="//android.view.View[@resource-id='payment-form']/android.view.View[2]")
+	@AndroidFindBy(xpath="//android.widget.Button[@text=\"Pay\"]")
 	private WebElement stripepay;
 	
 	@AndroidFindBy(xpath="//android.widget.Button[@resource-id='android:id/button1']")
@@ -83,7 +83,7 @@ public class DiscoverChallenge extends AndroidActionClass{
 		searchchallenge.sendKeys(Challengename);
 		waitForSeconds(2);
 		entertosearch.click();
-		waitUntilVisible(searchresults);
+		waitUntilVisible(searchresults);//handle if there is no result
 		ScrolltoText(Challengename);
 		String subTypeXpath = "//android.widget.TextView[@text='" + Challengename + "']";
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -100,7 +100,7 @@ public class DiscoverChallenge extends AndroidActionClass{
 		checkoutpay.click();
 		waitUntilClickable(stripepay);
 		stripepay.click();
-		waitUntilClickable(successfullmessage);
+		waitForSeconds(15);
 		successfullmessage.click();
 	}
 	public void backtohome() {

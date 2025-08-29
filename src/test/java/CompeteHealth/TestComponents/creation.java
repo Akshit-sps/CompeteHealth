@@ -3,7 +3,6 @@ package CompeteHealth.TestComponents;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -103,7 +102,7 @@ public class Creation extends BaseTest {
                     System.out.println("Joining challenge: " + challengename);
                     discover.challengesearch(challengename);
                     discover.joinchallenge();
-                    discover.backtohome();
+//                    discover.backtohome();
                     System.out.println("Successfully joined challenge: " + challengename);
                 }
             } catch (Exception e) {
