@@ -51,7 +51,7 @@ public class Signuppage extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Go back to login\"]")
 	private WebElement backtologinpage;
 	
-	public void signup(String email,String pass,String refercode) {
+	public void signupflow(String email,String pass,String refercode) {
 		createaccbutton.click();
 		emailadress.sendKeys(email);
 		password.sendKeys(pass);
