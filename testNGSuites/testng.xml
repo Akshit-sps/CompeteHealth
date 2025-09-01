@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="1" name="Data-driven testing in code itself">
     <classes>
-      <class name="CompeteHealth.TestComponents.creation"/>
+      <class name="CompeteHealth.TestComponents.Creation"/>
     </classes>
   </test> 
 </suite> 

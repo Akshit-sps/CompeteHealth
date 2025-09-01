@@ -2,27 +2,30 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-29T16:55:12 IST" name="Default suite" finished-at="2025-08-29T16:58:59 IST" duration-ms="226794">
+  <suite started-at="2025-09-01T13:49:12 IST" name="Default suite" finished-at="2025-09-01T13:53:40 IST" duration-ms="268341">
     <groups>
+      <group name="regression">
+        <method signature="Creation.ChallengeCreation(java.util.List)[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" name="ChallengeCreation" class="CompeteHealth.TestComponents.Creation"/>
+      </group> <!-- regression -->
     </groups>
-    <test started-at="2025-08-29T16:55:12 IST" name="Default test" finished-at="2025-08-29T16:58:59 IST" duration-ms="226794">
+    <test started-at="2025-09-01T13:49:12 IST" name="Default test" finished-at="2025-09-01T13:53:40 IST" duration-ms="268341">
       <class name="CompeteHealth.TestComponents.Creation">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" started-at="2025-08-29T16:55:12 IST" name="configureAppium" finished-at="2025-08-29T16:55:40 IST" duration-ms="27759" status="PASS">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" started-at="2025-09-01T13:49:12 IST" name="configureAppium" finished-at="2025-09-01T13:49:50 IST" duration-ms="38377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="challengejoin(java.util.List)[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" started-at="2025-08-29T16:55:41 IST" name="challengejoin" data-provider="joinData" finished-at="2025-08-29T16:58:57 IST" duration-ms="195898" status="PASS">
+        <test-method signature="ChallengeCreation(java.util.List)[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" started-at="2025-09-01T13:49:51 IST" name="ChallengeCreation" data-provider="challengeData" finished-at="2025-09-01T13:53:38 IST" duration-ms="227032" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[{password=Hello@123, challengename=Automation: Distance Challenge - Cycle, email=triumpco4@yopmail.com}, {challengename=Automation: Distance Challenge - Walk/Run}]]]>
+                <![CDATA[[{entryFee=20, numOfGroups=null, endDate=10-09-2025, typeName=Sleep Tracking, percentages=[55, 45], description=Sleep tracking challenge, numWinners=2, password=Hello@123, privatePass=null, name=Automation Sleep Better Tonight Challenge, tieredStructure=null, subType=null, startTime=18:00, endTime=19:00, email=akshittested@yopmail.com, startDate=07-09-2025}, {entryFee=15, numOfGroups=null, endDate=05-09-2025, typeName=Distance, percentages=[60, 40], description=Distance - Walk/Run challenge, numWinners=2, privatePass=null, name=Automation 5K Walk & Run Distance Challenge, tieredStructure=null, subType=Walk/Run, startTime=18:00, endTime=20:00, startDate=02-09-2025}, {entryFee=25, numOfGroups=null, endDate=07-09-2025, typeName=Distance, percentages=[50, 30, 20], description=Distance - Cycle challenge, numWinners=3, privatePass=null, name=Automation Weekend Cycling Challenge, tieredStructure=null, subType=Cycle, startTime=19:00, endTime=21:00, startDate=06-09-2025}, {entryFee=20, numOfGroups=null, endDate=06-09-2025, typeName=Distance, percentages=null, description=Distance - All activities, numWinners=null, privatePass=null, name=Automation All Activities Distance Marathon, tieredStructure=Age, subType=All the above, startTime=21:00, endTime=23:00, startDate=04-09-2025}, {entryFee=15, numOfGroups=null, endDate=09-09-2025, typeName=Step, percentages=[70, 30], description=Steps challenge, numWinners=2, privatePass=null, name=Automation 10K Steps Challenge, tieredStructure=null, subType=null, startTime=22:00, endTime=23:00, startDate=07-09-2025}, {entryFee=20, numOfGroups=2, endDate=04-09-2025, typeName=Calories Burned, percentages=null, description=Calories challenge automation, numWinners=null, privatePass=null, name=Automation Burn Calories Fast Challenge, tieredStructure=6-Month Average, subType=Walk/Run, startTime=13:00, endTime=23:00, startDate=03-09-2025}, {entryFee=15, numOfGroups=3, endDate=06-09-2025, typeName=Active Minutes, percentages=null, description=Active Minutes - All activities, numWinners=null, privatePass=null, name=Automation Active Minutes Power Challenge, tieredStructure=12-Month Average, subType=All the above, startTime=17:00, endTime=18:00, startDate=05-09-2025}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- challengejoin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" started-at="2025-08-29T16:58:57 IST" name="tearDown" finished-at="2025-08-29T16:58:59 IST" duration-ms="2472" status="PASS">
+        </test-method> <!-- ChallengeCreation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CompeteHealth.TestComponents.Creation@6743e411]" started-at="2025-09-01T13:53:38 IST" name="tearDown" finished-at="2025-09-01T13:53:40 IST" duration-ms="2401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

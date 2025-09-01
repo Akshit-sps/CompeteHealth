@@ -26,7 +26,7 @@ public class Creation extends BaseTest {
         if (login == null) {
             throw new RuntimeException("Loginpage object is not initialized. Check if driver is properly set up.");
         }
-//    	login.onboarding();
+    	login.onboarding();
         String email = (String) dataList.get(0).get("email");
         String password = (String) dataList.get(0).get("password");
         login.login(email, password);
@@ -102,7 +102,7 @@ public class Creation extends BaseTest {
                     System.out.println("Joining challenge: " + challengename);
                     discover.challengesearch(challengename);
                     discover.joinchallenge();
-//                    discover.backtohome();
+                    discover.backtohome(); // intermittent issue so need to handle
                     System.out.println("Successfully joined challenge: " + challengename);
                 }
             } catch (Exception e) {

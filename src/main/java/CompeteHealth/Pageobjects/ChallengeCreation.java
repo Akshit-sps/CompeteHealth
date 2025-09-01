@@ -30,14 +30,7 @@ public class ChallengeCreation extends AndroidActionClass{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	@AndroidFindBy(xpath="//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/"
-			+ "android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup"
-			+ "/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup"
-			+ "/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/"
-			+ "android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/"
-			+ "com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView\n"
-			+ "")
-
+	@AndroidFindBy(xpath="//com.horcrux.svg.RectView")
 	private WebElement plusicon;
 	
 	@AndroidFindBy(xpath="//android.widget.EditText[@text='Challenge Title']")
@@ -130,7 +123,6 @@ public class ChallengeCreation extends AndroidActionClass{
 		waitUntilVisible(challengename);
 		challengename.sendKeys(name);
 		selectChallengeTypeAndSubType(typeName,subtypename);
-		
 	}
     
     public void dateandtime(String startDate, String startTime, String endDate, String endTime) throws InterruptedException {
