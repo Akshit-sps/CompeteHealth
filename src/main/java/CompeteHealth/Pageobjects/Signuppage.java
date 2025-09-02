@@ -21,7 +21,7 @@ public class Signuppage extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Create an Account\"]")
 	private WebElement createaccbutton;
 	
-	@AndroidFindBy(xpath="//android.widget.EditText[@text=\"Enter your email address\"]")
+	@AndroidFindBy(xpath="//android.widget.EditText[@text='Enter your email address']")
 	private WebElement emailadress;
 	
 	@AndroidFindBy(xpath="//android.widget.EditText[@text=\"Enter your password\"]")
@@ -51,13 +51,19 @@ public class Signuppage extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Go back to login\"]")
 	private WebElement backtologinpage;
 	
-	public void signupflow(String email,String pass,String refercode) {
+	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Create an account\"]")
+	private WebElement createanaccount; 
+	
+	public void signupflow(String emails,String pass,String refercode) {
 		createaccbutton.click();
-		emailadress.sendKeys(email);
+		waitUntilVisible(createanaccount);
+		emailadress.sendKeys(emails);
 		password.sendKeys(pass);
-		refercodedropdown.click();
-		waitUntilVisible(enterrefercode);
-		enterrefercode.sendKeys(refercode);
+		if(refercode != null && !refercode.trim().isEmpty()) {
+			refercodedropdown.click();
+			waitUntilVisible(enterrefercode);
+			enterrefercode.sendKeys(refercode);
+		}
 		checkbboxtermandcondition.click();
 		signupbutton.click();
 		waitUntilVisible(backtologinpage);

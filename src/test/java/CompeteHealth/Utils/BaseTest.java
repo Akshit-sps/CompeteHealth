@@ -15,6 +15,7 @@ import CompeteHealth.Pageobjects.ChallengeCreation;
 import CompeteHealth.Pageobjects.DiscoverChallenge;
 import CompeteHealth.Pageobjects.Loginpage;
 import CompeteHealth.Pageobjects.Signuppage;
+import CompeteHealth.Pageobjects.verification;
 import CompeteHealth.utils.AndroidActionClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -30,6 +31,7 @@ public class BaseTest{
 	public AndroidActionClass utils;
 	public DiscoverChallenge discover;
 	public Signuppage signup;
+	public verification verify;
 	
 	@BeforeClass(alwaysRun=true)
 	public void configureAppium() throws IOException, URISyntaxException, InterruptedException {
@@ -80,6 +82,7 @@ public class BaseTest{
 				utils = new AndroidActionClass(driver);
 				discover = new DiscoverChallenge(driver);
 				signup = new Signuppage(driver);
+				verify = new verification(driver);
 			} else {
 				throw new RuntimeException("Failed to create AndroidDriver instance");
 			}

@@ -1,35 +1,59 @@
 package CompeteHealth.Pageobjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.InteractsWithApps;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.PressesKey;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class verification{
-	WebDriver driver;
-	public verification (WebDriver driver) {
+	AppiumDriver driver;
+	public verification (AppiumDriver driver) {
 		super();
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//input[@placeholder='Enter your inbox here']")
-	WebElement enteryouremail;
+	@AndroidFindBy(id = "com.android.chrome:id/url_bar")
+	private WebElement addressBar;
+
+	@AndroidFindBy(id = "com.android.chrome:id/search_box_text")
+	private WebElement firstRunSearchBox;
 	
-	@FindBy(xpath="//i[contains(text(),'')]")
-	WebElement sendingmail;
+	@AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='login']")
+	private WebElement yopmailemail;
 	
-	@FindBy(xpath="//div[contains(text(),'today')]/following-sibling::div")
-	WebElement firstmail;
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='']")
+	private WebElement yopmailenter;
 	
-	@FindBy(xpath="//a[contains(text(),'Verify Your Email Address')]")
-	WebElement verifymail;
+	@AndroidFindBy(xpath = "//android.widget.Button[contains(@text,'Compete Health Verify Your Email Address')]")
+	private WebElement verificationmail;
 	
-	public void verify(String mail) {
-		enteryouremail.sendKeys(mail);
-		sendingmail.click();
-		firstmail.click();
-		verifymail.click();
+	@AndroidFindBy(id = "//android.view.View[@content-desc=\"Verify Your Email Address\"]")
+	private WebElement finalverification;
+	
+	public void openChromeAndVerify(String mail) {
+
+		((InteractsWithApps) driver).activateApp("com.android.chrome");
+		if (driver instanceof AndroidDriver) {
+			((AndroidDriver) driver).context("NATIVE_APP");
+		}
+		org.openqa.selenium.WebElement urlField;
+		try {
+			urlField = driver.findElement(AppiumBy.id("com.android.chrome:id/url_bar"));
+		} catch (Exception e) {
+			urlField = driver.findElement(AppiumBy.id("com.android.chrome:id/search_box_text"));
+		}
+		urlField.click();
+		urlField.clear();
+		urlField.sendKeys("https://yopmail.com/en/");
+		((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+        
 	}
 }
