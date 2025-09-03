@@ -64,7 +64,7 @@ public class Loginpage extends AndroidActionClass{
 	}
 	
 	public void PreSetup() {
-		((InteractsWithApps) driver).terminateApp("com.competehealth");
+		((InteractsWithApps) driver).terminateApp("com.android.chrome");
 		((InteractsWithApps) driver).activateApp("com.competehealth");
 	}
 	
