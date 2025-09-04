@@ -1,7 +1,6 @@
 package CompeteHealth.Pageobjects;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -84,12 +83,8 @@ public class verification extends AndroidActionClass{
 	    firstMail.click();
 	    //switch back to defaiult
 	    driver.switchTo().defaultContent(); // only if needed
-	    //google captcha
-	    System.out.println("Solve the CAPTCHA manually...");
-	    waitForSeconds(30);
-	    System.out.println("Continuing test...");
+	    
 
-	    // Re-fetch available contexts after CAPTCHA
 	    for (String contextName : ((AndroidDriver) driver).getContextHandles()) {
 	        System.out.println("Available context after captcha: " + contextName);
 	        if (contextName.contains("WEBVIEW_chrome")) {
@@ -97,19 +92,18 @@ public class verification extends AndroidActionClass{
 	            break;
 	        }
 	    }
+	     driver.switchTo().defaultContent();
 
-	    // Now check if frame exists again before switching
-	    List<WebElement> ifmailFrame = driver.findElements(By.id("ifmail"));
-	    if (!ifmailFrame.isEmpty()) {
-	        driver.switchTo().frame("ifmail");
-	    }
+		 // switch into mobile mail frame
+		 driver.switchTo().frame("ifmobmail");
+		 WebElement verifyLink = wait.until(ExpectedConditions.elementToBeClickable(
+		     By.xpath("//a[contains(.,'Verify')]")
+		 ));
+		 verifyLink.click();
 
-	    WebElement verifyLink = wait.until(ExpectedConditions.elementToBeClickable(
-	            By.xpath("//a[contains(text(),'Verify Your Email Address')]")
-	    ));
-	    verifyLink.click();
 
 	    driver.switchTo().defaultContent();
-	    ((AndroidDriver) driver).context("NATIVE_APP");;
+	    ((AndroidDriver) driver).context("NATIVE_APP");
 	}
+	
 }

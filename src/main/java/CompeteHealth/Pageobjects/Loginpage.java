@@ -69,7 +69,6 @@ public class Loginpage extends AndroidActionClass{
 	}
 	
 	public void login(String name,String pass) {
-		
 		username.sendKeys(name);
 		password.sendKeys(pass);
 		signin.click();

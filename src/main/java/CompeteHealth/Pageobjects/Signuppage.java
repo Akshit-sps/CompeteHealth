@@ -68,4 +68,7 @@ public class Signuppage extends AndroidActionClass{
 		signupbutton.click();
 		waitUntilVisible(backtologinpage);
 	}
+	public void backtologinscreen() {
+		backtologinpage.click();
+	}
 }
