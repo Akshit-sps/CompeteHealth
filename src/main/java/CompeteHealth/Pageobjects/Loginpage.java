@@ -52,6 +52,21 @@ public class Loginpage extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Use a watch or ring to track activity then receive payouts']")
 	private WebElement forthpageonboarding;
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Your Trophy case\"]")
+	private WebElement ourtrophycase;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"android:id/message\"]")
+	private WebElement emailnoexist; 
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@resource-id=\"android:id/button1\"]")
+	private WebElement confirmemailnoexist; 
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Profile\"]")
+	private WebElement profile;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Log out\"]")
+	private WebElement logouts;
+	
 	public void onboarding() {
 //		permissionfour.click();
 		orboardingnext.click();
@@ -69,9 +84,12 @@ public class Loginpage extends AndroidActionClass{
 	}
 	
 	public void login(String name,String pass) {
+		username.clear();
 		username.sendKeys(name);
+		password.clear();
 		password.sendKeys(pass);
 		signin.click();
+		waitUntilVisible(ourtrophycase);
 	}
 	public ChallengeCreation permissions() throws InterruptedException {
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -79,5 +97,26 @@ public class Loginpage extends AndroidActionClass{
 //		wait.until(ExpectedConditions.elementToBeClickable(permissiontwo)).click();
 //		wait.until(ExpectedConditions.elementToBeClickable(permissionthree)).click();
 		return new ChallengeCreation(driver);
+	}
+	public void logout() {
+		profile.click();
+		ScrolltoText("Log out");
+		logouts.click();
+	}
+
+	public boolean attemptLogin(String name, String pass) {
+		username.clear();
+		username.sendKeys(name);
+		password.clear();
+		password.sendKeys(pass);
+		signin.click();
+		try {
+			waitUntilVisible(ourtrophycase);
+			return true;
+		} catch (Exception e) {
+			waitUntilVisible(emailnoexist);
+			confirmemailnoexist.click();
+			return false;
+		}
 	}
 }

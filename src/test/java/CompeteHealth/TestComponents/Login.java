@@ -14,31 +14,29 @@ import CompeteHealth.Utils.BaseTest;
 public class Login extends BaseTest { 
     @Test()
     public void loginverification() throws IOException {
-//    	login.onboarding();
-    	FileInputStream file =new FileInputStream("C:\\Users\\user.DESKTOP-I9IFEEO\\eclipse-workspace\\CompeteHealth\\src\\test\\java\\CompeteHealth\\TestData\\Logindata.xlsx");
-		@SuppressWarnings("resource")
-		XSSFWorkbook work =new XSSFWorkbook(file);
-        XSSFSheet sheet= work.getSheet("Sheet1");
-        int row =sheet.getLastRowNum();
-        int cel=  sheet.getRow(row).getLastCellNum();
-        for(int r=1;r<=row;r++)
-        {	
-        	XSSFRow rw=sheet.getRow(r);
-        	for(int c=0;c<=cel-1;c++)
-        	{
-        		XSSFCell cl= rw.getCell(c);
-        		String cellvalue=cl.toString();
-        		String[] parts = cellvalue.split(",");
-        		
-        		String emails = parts[0].trim();
-        		String passwords = parts[1].trim();
+    	login.onboarding();
+    	try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+    	        + "\\src\\test\\java\\CompeteHealth\\TestData\\Logindata.xlsx");
+    	     XSSFWorkbook work = new XSSFWorkbook(fis)) {
 
-        		System.out.println("First: " + emails);
-        		System.out.println("Second: " + passwords);
-//            	login.login(emails, passwords);
-        	}
-        	System.out.println();		
-        }
+    	    XSSFSheet sheet = work.getSheet("Sheet1");
+    	    int lastRow = sheet.getLastRowNum();
 
+    	    for (int r = 1; r <= lastRow; r++) { 
+    	        XSSFRow rw = sheet.getRow(r);
+    	        if (rw == null) continue;
+
+    	        XSSFCell emailCell = rw.getCell(0);
+    	        XSSFCell passCell  = rw.getCell(1);
+    	        if (emailCell == null || passCell == null) continue;
+
+    	        String email = emailCell.toString().trim();
+    	        String pass  = passCell.toString().trim();
+    	        boolean success = login.attemptLogin(email, pass);
+    	        if (success) {
+    	        	login.logout();
+    	        }
+    	    }
+    	}
     }
 }
