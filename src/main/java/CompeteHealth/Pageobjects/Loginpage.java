@@ -19,10 +19,17 @@ public class Loginpage extends AndroidActionClass{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	@AndroidFindBy(xpath="//android.widget.EditText[@text='Enter your email address']")
+//	@AndroidFindBy(xpath="//android.widget.EditText[@text='Enter your email address']")
+//	private WebElement username;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Email Address']/following-sibling::android.widget.EditText")
 	private WebElement username;
 	
-	@AndroidFindBy(xpath="//android.widget.EditText[@text='Enter your password']")
+//	@AndroidFindBy(xpath="//android.widget.EditText[@text='Enter your password']")
+//	private WebElement password;
+
+//	"//android.widget.TextView[@text='Password']/following-sibling::android.view.ViewGroup//android.widget.EditText"
+	@AndroidFindBy(xpath="//android.widget.EditText[preceding-sibling::android.widget.TextView[@text='Password']]")
 	private WebElement password;
 	
 	@AndroidFindBy(accessibility="Sign in")
@@ -52,8 +59,8 @@ public class Loginpage extends AndroidActionClass{
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Use a watch or ring to track activity then receive payouts']")
 	private WebElement forthpageonboarding;
 	
-	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Your Trophy case\"]")
-	private WebElement ourtrophycase;
+	@AndroidFindBy(xpath="//android.widget.TextView[@text=\"Trending Challenges\"]")
+	private WebElement trendingchallenge;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"android:id/message\"]")
 	private WebElement emailnoexist; 
@@ -85,11 +92,9 @@ public class Loginpage extends AndroidActionClass{
 	
 	public void login(String name,String pass) {
 		username.clear();
-		username.sendKeys(name);
-		password.clear();
-		password.sendKeys(pass);
+		password.clear(); 
 		signin.click();
-		waitUntilVisible(ourtrophycase);
+		
 	}
 	public ChallengeCreation permissions() throws InterruptedException {
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -110,13 +115,23 @@ public class Loginpage extends AndroidActionClass{
 		password.clear();
 		password.sendKeys(pass);
 		signin.click();
+
+		boolean success;
 		try {
-			waitUntilVisible(ourtrophycase);
-			return true;
+			waitUntilVisible(trendingchallenge); 
+			success = true;
 		} catch (Exception e) {
-			waitUntilVisible(emailnoexist);
-			confirmemailnoexist.click();
-			return false;
+			try {
+				waitUntilVisible(emailnoexist);
+				success = false;
+			} catch (Exception ex) {
+				success = false;
+			}
 		}
+		return success;
+	}
+	public void validationpopup() {
+		waitUntilVisible(emailnoexist);
+		confirmemailnoexist.click();
 	}
 }

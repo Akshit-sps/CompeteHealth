@@ -35,6 +35,8 @@ public class Login extends BaseTest {
     	        boolean success = login.attemptLogin(email, pass);
     	        if (success) {
     	        	login.logout();
+    	        }else {
+    	        	login.validationpopup();
     	        }
     	    }
     	}
